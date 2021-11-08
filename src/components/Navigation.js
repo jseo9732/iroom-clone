@@ -1,8 +1,9 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
+import React from "react";
 
 export default function Navigation() {
   return (
-    <div style={{padding:"30px", background:"lightGray"}}>
+    <div>
       <Link to="/">홈</Link>
       <Link to="/intro">공간소개</Link>
       <Link to="/reservation">예약하기</Link>
