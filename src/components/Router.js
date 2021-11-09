@@ -2,6 +2,7 @@ import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Home, Intro, Reservation, Login, Profile } from "../pages/PagesIndex";
 import Navigation from "./Navigation";
+import Footer from "./Footer";
 
 export default function AppRouter() {
   return (
@@ -23,6 +24,7 @@ export default function AppRouter() {
         <Routes>
           <Route exact path="/profile" element={<Profile />} />
         </Routes>
+        <Footer />
       </BrowserRouter>
     </>
   );
