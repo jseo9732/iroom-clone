@@ -1,0 +1,212 @@
+.userInfoWrapper {
+  position: relative;
+  background: #06b495;
+  padding: 20px 0 11px;
+  /* display: flex;
+  flex-direction: column; */
+}
+.userInfo {
+  max-width: 375px;
+  position: relative;
+  margin: 0 auto;
+  padding: 0 20px;
+  box-sizing: border-box;
+}
+/* --userInfoTop-- */
+.userInfoTop {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+.userIcon {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  margin-right: 23px;
+  border: 2px solid #fff;
+  border-radius: 50%;
+  background: lightgray;
+}
+.userIcon svg {
+  width: 60px;
+  height: 60px;
+  fill: #fff;
+  border-radius: 50%;
+  /* svg 오류??  */
+}
+.userDesc > p {
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #fff;
+  line-height: 2.6rem;
+  padding-bottom: 7px;
+}
+.userDescList {
+  display: flex;
+}
+.userDescList p {
+  padding: 0 20px;
+}
+.userDescList p:first-child {
+  border-right: 1px solid #05AA88;
+}
+.userDescList p span {
+  display: block;
+  font-size: .9rem;
+  color: #99ecdd;
+  letter-spacing: -.3px;
+  text-align: center;
+  white-space: nowrap;
+}
+.userDescList p em {
+  display: block;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #fff;
+  line-height: 1.9rem;
+  text-align: center;
+}
+
+/* --userInfoBottom-- */
+.userInfoBottom {
+  margin-top: 15px;
+}
+.profileChangeBtn {
+  width: 100%;
+  height: 38px;
+  border-radius: 8px;
+  background: #0cc5a4;
+  box-shadow: 0 2px 5px 0 rgb(0 107 88 / 10%);
+  box-sizing: border-box;
+  font-size: .95rem;
+  font-weight: 500;
+  color: #fff;
+  letter-spacing: -0.3px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --userReserve-- */
+.userReserveWrapper {
+  position: relative;
+  background: #f9f9f9;
+  height: calc(100vh - 174px); /* navigation 높이 반영하지 않음 */
+}
+.userReserveInfo {
+  position: relative;
+  width: 100%;
+  background: #06b495;
+  padding-left: calc(50% - 340px);
+}
+.userReserveInfo > span {
+  display: block;
+  text-align: center;
+  width: 70px;
+  position: relative;
+  padding: 14px 5px;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #fff;
+}
+.userReserveInfo > span::after {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: 3px;
+  border-radius: 2px;
+  background: #fff;
+  content: "";
+}
+.userReserve {
+  max-width: 720px;
+  width: 100%;
+  margin: 0 auto;
+  box-sizing: border-box;
+  padding: 30px 20px 0;
+}
+.userReserveTop {
+  display: flex;
+}
+.userReserveTop > div {
+  transform: translateY(5px);
+  /* 스터디룸 이름을 p태그로 감쌌는데 왼쪽 아이콘과 수평이 맞지않아 5px 내려주었습니다. */
+}
+.userReserveIcon {
+  position: relative;
+  background: #0cc5ac;
+  float: left;
+  width: 42px;
+  height: 42px;
+  margin: 2px 12px 0 0;
+  border-radius: 21px;
+  box-shadow: 1px 1px 5px 0 rgb(0 0 0 / 5%), 0 0 1px 0 rgb(0 0 0 / 18%);
+}
+.userReserveIcon::after {
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  width: 1px;
+  height: 25px;
+  background: #e3e6e8;
+  content: "";
+}
+.userReserveIcon svg {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  fill: #fff;
+  width: 32px;
+  height: 32px;
+}
+.userReserveTop p {
+  line-height: 1rem;
+  display: block;
+}
+.userReserveTop p:first-child {
+  font-size: 1.15rem;
+  font-weight: bold;
+}
+.userReserveTop p:last-child {
+  margin-top: 2px;
+  font-size: .9rem;
+  font-weight: 400;
+  color: #666;
+}
+.userReserveTop span:last-child {
+  margin-left: 8px;
+}
+.userReserveTop span:last-child::before {
+  display: inline-block;
+  width: 1px;
+  height: 10px;
+  margin: 5px 8px 0 0;
+  border-radius: 0.5px;
+  background: #e1e1e1;
+  content: "";
+}
+.userReserveBottom {
+  position: relative;
+  margin-top: 13px;
+  padding: 23px 25px 21px;
+  border-radius: 15px;
+  background: #fff;
+  box-shadow: 0 2px 6px 0 rgb(0 0 0 / 5%), 0 0 1px 0 rgb(0 21 81 / 5%);
+  display: flex;
+  justify-content: space-between;
+}
+.userReserveBottom p span:first-child {
+  font-weight: 600;
+  padding-right: 5px;
+}
+.userReserveBtnGroup {
+  display: flex;
+}
+.userReserveBtn {
+  padding: 0 8px;
+  font-size: .9rem;
+  letter-spacing: -0.3px;
+  cursor: pointer;
+}
