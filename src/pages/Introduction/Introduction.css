@@ -1,0 +1,26 @@
+.IntroIntro {
+  position: relative;
+  background: rgb(62, 204, 181);
+  height: 238px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.IntroIntro p {
+  font-size: 15px;
+}
+
+.IntroTitle {
+  margin-top: 10%;
+  font-size: 46px;
+  letter-spacing: 0.0599999997926795em;
+  font-family: 맑은 고딕, malgun gothic, apple sd gothic neo, applegothic,
+    sans-serif;
+  font-weight: bold;
+}
+
+.IntroImages {
+  margin-top: 10%;
+}
