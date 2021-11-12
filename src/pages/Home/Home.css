@@ -1,0 +1,11 @@
+.HomeContainer {
+  margin-top: 72px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.HomeContainer img {
+  width: 100%;
+  filter: brightness(70%);
+}
