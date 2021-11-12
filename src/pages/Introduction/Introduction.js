@@ -1,5 +1,6 @@
 import React from "react";
 import "./Introduction.css";
+
 export default function Introduction() {
     return ( 
     <div className="IntroParents">
@@ -10,11 +11,24 @@ export default function Introduction() {
     </div>
 
     <div className="IntroImages">
-        <img className="room4" alt="room4" src={require('../Introduction/images/4인.jpg').default} />
-        <img className="room6" alt="room6" src={require('../Introduction/images/6인.webp').default} />
-       <img className="room10" alt="room10" src={require('../Introduction/images/10인.webp').default} />
-       <img className="room20" alt="room20" src={require('../Introduction/images/20인.webp').default} />  
+        <div className="room4Box">
+            <img className="room4" alt="room4" src={require('../Introduction/images/4인.jpg').default}/>
+        </div>
+
+        <div className="room6Box">
+            <img className="room6" alt="room6" src={require('../Introduction/images/6인.png').default} />
+        </div>
+   
+
+        <div className="room10Box">
+            <img className="room10" alt="room10" src={require('../Introduction/images/10인.jpg').default} />
+        </div>
+
+         <div className="room20Box">
+             <img className="room20" alt="room20" src={require('../Introduction/images/20인.webp').default} />  
+        </div>
     </div>
     </div>
+
     );
 }
