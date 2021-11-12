@@ -9,3 +9,52 @@
   width: 100%;
   filter: brightness(70%);
 }
+
+.HomeContnts {
+  z-index: 1;
+  position: absolute;
+  margin-left: calc((100% - 918px) / 2);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.HomeTitle {
+  letter-spacing: 0.06em;
+  font-size: 119px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.HomeDesc {
+  letter-spacing: 0.45em;
+  font-size: 26px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.HomeBtn {
+  width: 191px;
+  height: 44px;
+  text-align: center;
+  background-color: #3eccb4;
+  transition: 500ms;
+  margin-left: calc((100% - 191px) / 2);
+}
+
+.HomeBtn:hover {
+  cursor: pointer;
+  background-color: #257a6c;
+  transition: 500ms;
+}
+
+.HomeBtn a {
+  font-size: 16px;
+  line-height: 44px;
+  color: #ffffff;
+  text-decoration: none;
+}
