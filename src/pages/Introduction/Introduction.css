@@ -1,0 +1,56 @@
+html {
+  height: 100%;
+}
+
+.IntroParents {
+  margin-top: 69px;
+  height: 100%;
+}
+
+.IntroContents {
+  padding-top: 61.5px;
+}
+
+.IntroIntro {
+  position: relative;
+  background: rgb(62, 204, 181);
+  height: 238px;
+  color: white;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.IntroIntro p {
+  font-size: 15px;
+}
+
+.IntroTitle {
+  margin-top: 10%;
+  font-size: 46px;
+  letter-spacing: 0.0599999997926795em;
+  font-family: 맑은 고딕, malgun gothic, apple sd gothic neo, applegothic,
+    sans-serif;
+  font-weight: bold;
+}
+
+.IntroImages {
+  display: grid;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 30% 30%;
+}
+
+.IntroImages img {
+  height: 100%;
+  width: 100%;
+}
+
+.room4Box,
+.room6Box,
+.room10Box,
+.room20Box {
+  height: 100%;
+}
+
+.room4Box :hover {
+}

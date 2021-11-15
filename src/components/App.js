@@ -1,4 +1,7 @@
 import AppRouter from "./Router";
+import React from "react";
+import "./app.css";
+
 
 export default function App() {
   return (
@@ -7,3 +10,5 @@ export default function App() {
     </div>
   );
 }
+
+// hi
