@@ -97,9 +97,10 @@
   position: relative;
   width: 100%;
   background: #06b495;
-  padding-left: calc(50% - 340px);
+  /* padding-left: calc(50% - 340px); */
 }
 .userReserveInfo > span {
+  margin-left:  calc(50% - 340px);
   display: block;
   text-align: center;
   width: 70px;

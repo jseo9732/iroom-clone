@@ -1,6 +1,62 @@
+import { useState } from "react"
 import "./reservation.css";
 
+function ReserveModal({setIsReserveClick}) {
+  const isLoginedTest = true
+  return (
+    <div className="reserveModalWrapper">
+      <div className="reserveModalInner">
+        { isLoginedTest ? (
+          <form onSubmit={null}>
+            <div 
+              className="reserveCloseBtn"
+              onClick={ setIsReserveClick((prev) => !prev) }
+              // 구현실패
+            > X </div>
+            <h2>스터디룸 예약</h2>
+            <ul>
+              <li>
+                <p>예약자</p>
+                <p>홍길동</p> {/* 유저아이디 불러오기 */}
+              </li>
+              <li>
+                <p>휴대폰</p>
+                <input type="text" placeholder="010-1234-5678" />
+              </li>
+              <li>
+                <p>예약공간</p>
+                <select>
+                  <option value="">--방을 선택하세요--</option>
+                  <option value="twoRoom">2인실</option>
+                  <option value="fourRoom">4인실</option>
+                  <option value="sixRoom">6인실</option>
+                  <option value="fiftRoom">15인실</option>
+                </select>
+              </li>
+              <li>
+                <p>예약일</p>
+                <input type="date"/>
+              </li>
+              <li>
+                <p>예약시간</p>
+                <input type="time"/>
+                <input type="time"/>
+              </li>
+            </ul>
+            <input type="submit" value="예약신청" />
+          </form>) : (
+          <div>로그인 후 이용하세요</div>)
+        }
+      </div>
+    </div>
+  )
+}
+
 export default function Reservation() {
+  const [isReserveClick, setIsReserveClick] = useState(false);
+  const onReserveBtnClick = () => {
+    setIsReserveClick((prev) => !prev)
+  }
   return (
     <section className="reservation">
       <img
@@ -8,6 +64,7 @@ export default function Reservation() {
         src="https://static.wixstatic.com/media/1e3643_0643d259faaa4532a6868cae979ac775~mv2_d_5184_3456_s_4_2.jpg/v1/fill/w_980,h_817,al_c,q_85,usm_0.66_1.00_0.01/1e3643_0643d259faaa4532a6868cae979ac775~mv2_d_5184_3456_s_4_2.webp"
         alt=""
       />
+      {isReserveClick && <ReserveModal setIsReserveClick={setIsReserveClick} />}
       <div className="reserveInfoWrapper">
         <div className="reserveInfo">
           <h2>Iroom study</h2>
@@ -34,7 +91,7 @@ export default function Reservation() {
             </div>
           </div>
           <div className="reserveBtnWrapper">
-            <div className="reserveBtn" onClick={null}>
+            <div className="reserveBtn" onClick={onReserveBtnClick}>
               예약 하기
             </div>
           </div>
