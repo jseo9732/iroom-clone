@@ -12,29 +12,31 @@ function ReserveModal({toggleReserveModal}) {
   const onReserveSubmit = async (e) => {
     e.preventDefault();
     const reserveObj = {
-      phoneNum,
       createdAt: Date.now(),
+      phoneNum,
       // creatorId: userObj.uid,
       room,
       reserveDate,
       reserveTime,
       reserveRemainTime,
     }
-    console.log(reserveObj);
     const ok = window.confirm("위의 정보로 예약하시겠습니까?")
     if(ok) {
+      console.log(reserveObj);
+      console.log(ok)
       //send db
       // try {
       //   await addDoc(collection(db, "reservation"), reserveObj);
       // } catch (e) {
       //   console.error("Error adding document: ", e);
       // }
+      setPhoneNum("");
+      setRoom("");
+      setReserveDate("");
+      setReserveTime("");
+      setReserveRemainTime("");
+      toggleReserveModal();
     }
-    setPhoneNum("");
-    setRoom("");
-    setReserveDate("");
-    setReserveTime("");
-    setReserveRemainTime("");
   }
   const onPhoneNumChange = (e) => {
     const { target : { value } } = e
