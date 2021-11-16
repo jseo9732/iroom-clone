@@ -1,17 +1,71 @@
 import { useState } from "react"
 import "./reservation.css";
 
-function ReserveModal({setIsReserveClick}) {
+function ReserveModal({toggleReserveModal}) {
   const isLoginedTest = true
+  const [phoneNum, setPhoneNum] = useState("")
+  const [room, setRoom] = useState("")
+  const [reserveDate, setReserveDate] = useState("")
+  const [reserveTime, setReserveTime] = useState("")
+  const [reserveRemainTime, setReserveRemainTime] = useState("")
+
+  const onReserveSubmit = async (e) => {
+    e.preventDefault();
+    const reserveObj = {
+      phoneNum,
+      createdAt: Date.now(),
+      // creatorId: userObj.uid,
+      room,
+      reserveDate,
+      reserveTime,
+      reserveRemainTime,
+    }
+    console.log(reserveObj);
+    const ok = window.confirm("위의 정보로 예약하시겠습니까?")
+    if(ok) {
+      //send db
+      // try {
+      //   await addDoc(collection(db, "reservation"), reserveObj);
+      // } catch (e) {
+      //   console.error("Error adding document: ", e);
+      // }
+    }
+    setPhoneNum("");
+    setRoom("");
+    setReserveDate("");
+    setReserveTime("");
+    setReserveRemainTime("");
+  }
+  const onPhoneNumChange = (e) => {
+    const { target : { value } } = e
+    setPhoneNum(value);
+  }
+  const onRoomChange = (e) => {
+    const { target : { value } } = e
+    setRoom(value);
+    console.log(value)
+  }
+  const onReserveDateChange = (e) => {
+    const { target : { value } } = e
+    setReserveDate(value);
+  }
+  const onReserveTimeChange = (e) => {
+    const { target : { value } } = e
+    setReserveTime(value);
+  }
+  const onReserveRemainTimeChange = (e) => {
+    const { target : { value } } = e
+    console.log(value)
+    setReserveRemainTime(value);
+  }
   return (
     <div className="reserveModalWrapper">
       <div className="reserveModalInner">
         { isLoginedTest ? (
-          <form onSubmit={null}>
+          <form onSubmit={ onReserveSubmit }>
             <div 
               className="reserveCloseBtn"
-              onClick={ setIsReserveClick((prev) => !prev) }
-              // 구현실패
+              onClick={ toggleReserveModal }
             > X </div>
             <h2>스터디룸 예약</h2>
             <ul>
@@ -21,11 +75,16 @@ function ReserveModal({setIsReserveClick}) {
               </li>
               <li>
                 <p>휴대폰</p>
-                <input type="text" placeholder="010-1234-5678" />
+                <input
+                  type="text"
+                  placeholder="010-1234-5678" 
+                  onChange={ onPhoneNumChange }
+                  value={ phoneNum }
+                />
               </li>
               <li>
                 <p>예약공간</p>
-                <select>
+                <select onChange={onRoomChange}>
                   <option value="">--방을 선택하세요--</option>
                   <option value="twoRoom">2인실</option>
                   <option value="fourRoom">4인실</option>
@@ -35,12 +94,24 @@ function ReserveModal({setIsReserveClick}) {
               </li>
               <li>
                 <p>예약일</p>
-                <input type="date"/>
+                <input
+                  type="date"
+                  onChange={ onReserveDateChange }
+                />
               </li>
               <li>
                 <p>예약시간</p>
-                <input type="time"/>
-                <input type="time"/>
+                <input
+                  type="time"
+                  onChange={ onReserveTimeChange }
+                />
+                <select onChange={ onReserveRemainTimeChange }>
+                  <option value="">--시간을 선택하세요--</option>
+                  <option value="1">1시간</option>
+                  <option value="2">2시간</option>
+                  <option value="3">3시간</option>
+                  <option value="4">4시간</option>
+                </select>
               </li>
             </ul>
             <input type="submit" value="예약신청" />
@@ -53,9 +124,9 @@ function ReserveModal({setIsReserveClick}) {
 }
 
 export default function Reservation() {
-  const [isReserveClick, setIsReserveClick] = useState(false);
-  const onReserveBtnClick = () => {
-    setIsReserveClick((prev) => !prev)
+  const [openReserveModal, setOpenReserveModal] = useState(false);
+  const toggleReserveModal = () => {
+    setOpenReserveModal((prev) => !prev)
   }
   return (
     <section className="reservation">
@@ -64,7 +135,7 @@ export default function Reservation() {
         src="https://static.wixstatic.com/media/1e3643_0643d259faaa4532a6868cae979ac775~mv2_d_5184_3456_s_4_2.jpg/v1/fill/w_980,h_817,al_c,q_85,usm_0.66_1.00_0.01/1e3643_0643d259faaa4532a6868cae979ac775~mv2_d_5184_3456_s_4_2.webp"
         alt=""
       />
-      {isReserveClick && <ReserveModal setIsReserveClick={setIsReserveClick} />}
+      {openReserveModal && <ReserveModal toggleReserveModal={toggleReserveModal} />}
       <div className="reserveInfoWrapper">
         <div className="reserveInfo">
           <h2>Iroom study</h2>
@@ -91,7 +162,7 @@ export default function Reservation() {
             </div>
           </div>
           <div className="reserveBtnWrapper">
-            <div className="reserveBtn" onClick={onReserveBtnClick}>
+            <div className="reserveBtn" onClick={toggleReserveModal}>
               예약 하기
             </div>
           </div>
