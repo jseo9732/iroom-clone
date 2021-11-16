@@ -27,7 +27,7 @@ export default function Introduction() {
 
     <div className="IntroImages">
         <div className="room4Box">
-            <img className="room4" alt="room4" src={require('../Introduction/images/4인.jpg').default}/>
+           <img className="room4" alt="room4" src={require('../Introduction/images/4인.jpg').default}/>    
         </div>
 
         <div className="room6Box">

@@ -52,5 +52,11 @@ html {
   height: 100%;
 }
 
-.room4Box :hover {
+.room4Box :hover,
+.room6Box :hover,
+.room10Box :hover,
+.room20Box :hover {
+  filter: blur(8px);
+  -webkit-filter: blur(8px);
+  transition: 0.5s;
 }
