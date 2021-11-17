@@ -5,6 +5,7 @@ import Navigation from "./Navigation";
 import Footer from "./Footer";
 
 export default function AppRouter({ refreshUser, isLoggedIn, userObj }) {
+
   return (
     <>
       <BrowserRouter>
@@ -12,9 +13,19 @@ export default function AppRouter({ refreshUser, isLoggedIn, userObj }) {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/intro" element={<Intro />} />
-          <Route path="/reservation" element={<Reservation />} />
-          <Route path="/login" element={<Login />} />
-          <Route path="/profile" element={<Profile />} />
+          <Route path="/reservation" element={
+            <Reservation 
+            isLoggedIn={isLoggedIn} 
+            userObj={userObj}
+            />} 
+          />
+          <Route path="/login" element={<Login/>} />
+          <Route path="/profile" element={
+            <Profile 
+            isLoggedIn={isLoggedIn} 
+            userObj={userObj}
+            />} 
+          />
         </Routes>
         <Footer />
       </BrowserRouter>
