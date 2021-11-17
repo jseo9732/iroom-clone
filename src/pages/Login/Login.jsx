@@ -1,4 +1,10 @@
 import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import {
+  createUserWithEmailAndPassword,
+  signInWithEmailAndPassword,
+} from "firebase/auth";
+import { authService } from "../../firebase";
 import "./Login.css"
 
 export default function Login() {
@@ -6,6 +12,8 @@ export default function Login() {
   const [password, setPassword] = useState("");
   const [newAccount, setNewAccount] = useState(true);
   const [error, setError] = useState("");
+  const navigate = useNavigate();
+  const auth = authService;
 
   const onChange = (event) => {
     const {
@@ -20,15 +28,21 @@ export default function Login() {
 
   const onSubmit = async (e) => {
     e.preventDefault();
-    // try {
-    //   if (newAccount) {
-    //     await createUserWithEmailAndPassword(auth, email, password);
-    //   } else {
-    //     await signInWithEmailAndPassword(auth, email, password);
-    //   }
-    // } catch (error) {
-    //   setError(error.message);
-    // }
+    try {
+      if (newAccount) {
+        await createUserWithEmailAndPassword(auth, email, password)
+        .then((res) => {
+          navigate('/');
+        });
+      } else {
+        await signInWithEmailAndPassword(auth, email, password)
+        .then((res) => {
+          navigate('/');
+        });
+      }
+    } catch (error) {
+      setError(error.message);
+    }
   };
 
   const toggleAccount = () => {

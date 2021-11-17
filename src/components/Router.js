@@ -4,11 +4,11 @@ import { Home, Intro, Reservation, Login, Profile } from "../pages/PagesIndex";
 import Navigation from "./Navigation";
 import Footer from "./Footer";
 
-export default function AppRouter() {
+export default function AppRouter({ refreshUser, isLoggedIn, userObj }) {
   return (
     <>
       <BrowserRouter>
-        <Navigation />
+        <Navigation isLoggedIn={isLoggedIn} />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/intro" element={<Intro />} />
