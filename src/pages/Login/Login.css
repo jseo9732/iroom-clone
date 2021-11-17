@@ -2,7 +2,6 @@
   margin-top: 69px;
   display: flex;
   justify-content: center;
-  align-items: center;
   width: 100%;
   position: relative;
 }
@@ -21,7 +20,7 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
-  margin-bottom: 100px;
+  margin-top: 70px;
 }
 
 .LoginInput {
