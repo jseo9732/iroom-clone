@@ -16,6 +16,7 @@ export default function App() {
         setUserObj({
           displayName: user.displayName,
           uid: user.uid,
+          email: user.email,
         });
       } else {
         setUserObj(null);
