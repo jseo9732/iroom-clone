@@ -10,7 +10,7 @@
 }
 
 .HeaderBox {
-  width: 1000px;
+  width: 980px;
   height: 100%;
   display: flex;
   justify-content: space-between;
@@ -29,7 +29,7 @@
 }
 
 .NavBtn {
-  padding: 10px;
+  padding: 15px;
   font-size: 16px;
   color: #ffffff;
   text-decoration: none;
