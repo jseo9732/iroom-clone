@@ -1,8 +1,16 @@
 import React from "react";
-import { Link, NavLink } from "react-router-dom";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { authService } from "../firebase";
+import { signOut } from "firebase/auth";
 import "./Navigation.css";
 
-export default function Navigation() {
+export default function Navigation({ isLoggedIn }) {
+  const auth = authService;
+  const navigate = useNavigate();
+  const onLogOutClick = () => {
+    signOut(auth);
+    navigate("/");
+  };
   return (
     <div className="HeaderContainer">
       <div className="HeaderBox">
@@ -19,9 +27,16 @@ export default function Navigation() {
           <NavLink to="/reservation" className="NavBtn">
             예약하기
           </NavLink>
-          <NavLink to="/login" className="NavBtn">
-            로그인
-          </NavLink>
+          {isLoggedIn ? (
+            <div className="LogoutBtn" onClick={onLogOutClick}>
+              로그아웃
+            </div>
+          ) : (
+            <NavLink to="/login" className="NavBtn">
+              로그인
+            </NavLink>
+          )}
+
           <NavLink to="/profile" className="NavBtn">
             마이페이지
           </NavLink>

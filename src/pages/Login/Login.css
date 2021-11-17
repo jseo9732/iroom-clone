@@ -42,6 +42,14 @@
   cursor: pointer;
 }
 
+.authError {
+  display: block;
+  color: tomato;
+  text-align: center;
+  font-weight: 500;
+  font-size: 12px;
+}
+
 .authSwitch {
   color: #50c7b3;
   text-align: center;
