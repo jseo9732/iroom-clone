@@ -37,6 +37,7 @@ function ReserveModal({uid, toggleReserveModal}) {
       setReserveTime("");
       setReserveRemainTime("");
       toggleReserveModal();
+      window.alert("예약되었습니다")
     }
   }
   const onPhoneNumChange = (e) => {
