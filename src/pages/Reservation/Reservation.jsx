@@ -1,5 +1,7 @@
 import { useState } from "react"
 import "./reservation.css";
+// import { collection, addDocs } from "firebase/firestore";
+// import db from "firebase"
 
 function ReserveModal({toggleReserveModal}) {
   const isLoginedTest = true
@@ -26,7 +28,7 @@ function ReserveModal({toggleReserveModal}) {
       console.log(ok)
       //send db
       // try {
-      //   await addDoc(collection(db, "reservation"), reserveObj);
+      //   await addDoc(collection(db, "reservations"), reserveObj);
       // } catch (e) {
       //   console.error("Error adding document: ", e);
       // }
