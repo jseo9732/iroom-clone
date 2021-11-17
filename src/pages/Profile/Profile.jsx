@@ -1,6 +1,56 @@
+// import { collection, query, where, getDocs } from "firebase/firestore";
+// import db from "firebase"
 import "./profile.css";
 
+function UserReserveList({ reserveObj }) {
+  return (
+    <li>
+      <div className="userReserveTop">
+        <span className="userReserveIcon">
+          <svg>
+            <path d="M23.126 6.55c.1 0 .183.066.213.157l.011.073v17.122c0 .192-.2.299-.35.216l-.06-.047-.876-.935c-.075-.08-.19-.096-.28-.048l-.063.048-1.113 1.189c-.075.08-.19.096-.281.048l-.063-.048-1.13-1.21c-.075-.08-.19-.096-.28-.048l-.063.048-1.13 1.21c-.075.08-.19.096-.28.048l-.064-.048-1.13-1.21c-.074-.08-.19-.096-.28-.048l-.063.048-1.13 1.21c-.074.08-.19.096-.28.048l-.063-.048-1.13-1.21c-.074-.08-.19-.096-.28-.048l-.063.048-1.13 1.21c-.075.08-.19.096-.28.048l-.064-.048-1.129-1.21c-.075-.08-.19-.096-.28-.048l-.064.048-.891.954c-.13.14-.346.075-.398-.091L8.65 23.9V6.78c0-.102.064-.188.153-.218l.07-.012h14.253zM14.95 16H11.8v1.05h3.15V16zm5.25-3.15h-8.4v1.05h8.4v-1.05zM17.05 9.7H11.8v1.05h5.25V9.7z"></path>
+          </svg>
+        </span>
+        <div>
+          <p>스터디룸 (15인실)</p>
+          <p>
+            <span>21.11.01월</span>
+            <span>오후 12:00</span>
+          </p>
+        </div>
+      </div>
+      <div className="userReserveBottom">
+        <p>
+          <span>휴대폰 번호</span>
+          <span>010-1234-5678</span>
+        </p>
+        <div className="userReserveBtnGroup">
+          <div className="userReserveBtn">예약 수정</div>
+          <div className="userReserveBtn">예약 삭제</div>
+        </div>
+      </div>
+    </li>
+  )
+}
+
+
 export default function Profile() {
+  const getReserveData = async () => {
+    // const q = query(collection(db, "reservations"), where("uid", "==", userObj.uid));
+    // const querySnapshot = await getDocs(q);
+    // return (
+    //   querySnapshot ? (
+    //     querySnapshot.forEach((doc) => 
+    //       <UserReserveList 
+    //         key={doc.uid}
+    //         reserveObj={doc}
+    //       />)
+    //   ) : (
+    //   "예약 내역이 없습니다"
+    //   )
+    // );
+  }
+  //예약 수정, 취소, 프로필 정보 변경구현 남음
   return (
     <div className="profile">
       <section className="userInfoWrapper">
@@ -35,32 +85,7 @@ export default function Profile() {
           <span>예약정보</span>
         </div>
         <ul className="userReserve">
-          <li>
-            <div className="userReserveTop">
-              <span className="userReserveIcon">
-                <svg>
-                  <path d="M23.126 6.55c.1 0 .183.066.213.157l.011.073v17.122c0 .192-.2.299-.35.216l-.06-.047-.876-.935c-.075-.08-.19-.096-.28-.048l-.063.048-1.113 1.189c-.075.08-.19.096-.281.048l-.063-.048-1.13-1.21c-.075-.08-.19-.096-.28-.048l-.063.048-1.13 1.21c-.075.08-.19.096-.28.048l-.064-.048-1.13-1.21c-.074-.08-.19-.096-.28-.048l-.063.048-1.13 1.21c-.074.08-.19.096-.28.048l-.063-.048-1.13-1.21c-.074-.08-.19-.096-.28-.048l-.063.048-1.13 1.21c-.075.08-.19.096-.28.048l-.064-.048-1.129-1.21c-.075-.08-.19-.096-.28-.048l-.064.048-.891.954c-.13.14-.346.075-.398-.091L8.65 23.9V6.78c0-.102.064-.188.153-.218l.07-.012h14.253zM14.95 16H11.8v1.05h3.15V16zm5.25-3.15h-8.4v1.05h8.4v-1.05zM17.05 9.7H11.8v1.05h5.25V9.7z"></path>
-                </svg>
-              </span>
-              <div>
-                <p>스터디룸 (15인실)</p>
-                <p>
-                  <span>21.11.01월</span>
-                  <span>오후 12:00</span>
-                </p>
-              </div>
-            </div>
-            <div className="userReserveBottom">
-              <p>
-                <span>휴대폰 번호</span>
-                <span>010-1234-5678</span>
-              </p>
-              <div className="userReserveBtnGroup">
-                <div className="userReserveBtn">예약 수정</div>
-                <div className="userReserveBtn">예약 삭제</div>
-              </div>
-            </div>
-          </li>
+          {getReserveData()}
         </ul>
       </section>
     </div>
