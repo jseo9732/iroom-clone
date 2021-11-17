@@ -72,12 +72,12 @@ export default function Login() {
             onChange={onChange}
             className="LoginInput"
           />
+          {error && <span className="authError">{error}</span>}
           <input
             type="submit"
             className="LoginInput LoginSubmit"
             value={newAccount ? "회원가입" : "로그인"}
           />
-          {error && <span className="authError">{error}</span>}
         </form>
         <span onClick={toggleAccount} className="authSwitch">
           {newAccount ? "로그인 하기" : "회원가입 하기"}
