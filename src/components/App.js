@@ -1,7 +1,7 @@
 import AppRouter from "./Router";
 import React from "react";
 import { useEffect, useState } from "react";
-import "./app.css";
+import "./App.css";
 import { authService } from "../firebase";
 import { onAuthStateChanged } from "firebase/auth";
 
@@ -23,6 +23,7 @@ export default function App() {
       setInit(true);
     });
   }, []);
+
   const refreshUser = () => {
     const user = authService.currentUser;
     setUserObj({
@@ -40,7 +41,7 @@ export default function App() {
           userObj={userObj}
         />
       ) : (
-        "Initializing..."
+        <div className="Init">Initializing...</div>
       )}
     </div>
   );
