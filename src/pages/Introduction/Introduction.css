@@ -59,7 +59,8 @@
 .room4Box :hover,
 .room6Box :hover,
 .room10Box :hover,
-.room20Box :hover {
+.room20Box :hover,
+.overlay:hover .room4Box {
   filter: brightness(70%);
   -webkit-filter: blur(20px);
   transition: 0.5s;
@@ -69,7 +70,7 @@
   margin: 0 auto;
   position: absolute;
   display: flex;
-  z-index: 5;
+  z-index: 1;
   width: 250px;
   height: 50px;
   font-family: "Noto Sans KR", sans-serif;

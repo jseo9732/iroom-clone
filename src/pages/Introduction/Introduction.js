@@ -2,6 +2,8 @@ import React from "react";
 import Footer from "../../components/Footer";
 import { dbService, storageService } from "../../firebase";
 import "./Introduction.css";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+
 
 export default function Introduction() {
     return ( 
@@ -16,26 +18,34 @@ export default function Introduction() {
 
     <div className="IntroImages">
 
-        <div className="room4Box">
+        <div className="room4Box">   
             <div className="overlay">4인 스터디룸</div> 
-            <img className="room4" alt="room4" src={require('../Introduction/images/4인.jpg').default}/>         
+            <Link to="/room" className="BtnToRoom">
+            <img className="room4" alt="room4" src={require('../Introduction/images/4인.jpg').default}/>
+            </Link>     
         </div>
         
 
         <div className="room6Box">
             <div className="overlay">6인 스터디룸</div>
+            <Link to="/room" className="BtnToRoom">
             <img className="room6" alt="room6" src={require('../Introduction/images/6인.png').default} />
+            </Link>
         </div>
    
 
         <div className="room10Box">
             <div className="overlay">10인 스터디룸</div>
+            <Link to="/room" className="BtnToRoom">
             <img className="room10" alt="room10" src={require('../Introduction/images/10인.jpg').default} />
+            </Link>
         </div>
 
          <div className="room20Box">
             <div className="overlay">20인 스터디룸</div>
-            <img className="room20" alt="room20" src={require('../Introduction/images/20인.webp').default} />  
+            <Link to="/room" className="BtnToRoom">
+            <img className="room20" alt="room20" src={require('../Introduction/images/20인.webp').default} /> 
+            </Link> 
         </div>
 
     </div>
