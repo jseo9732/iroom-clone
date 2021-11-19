@@ -1,9 +1,38 @@
 /*global kakao*/ 
-import React, { useEffect } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import "./Home.css"
 
 export default function Home() {
+  const [isHomeContntsScrolled, setIsHomeContntsScrolled] = useState(false);
+  // HomeContnts의 top 값
+  const homeContnts = document.getElementsByClassName('HomeContnts');
+  const [homeContntsFromTop, setHomeContntsFromTop] = useState(0);
+
+  const showHomeContnts = () => {
+    if (homeContntsFromTop <= 71) {
+      setIsHomeContntsScrolled(true);
+    }
+  }
+
+  const [isContactScrolled, setIsContactScrolled] = useState(false);
+  // HomeContnts의 top 값
+  const contactInfo = document.getElementsByClassName('ContactInfo');
+  const [contactInfoFromTop, setcontactInfoFromTop] = useState(1000);
+
+  const showContact = () => {
+    if (contactInfoFromTop <= 700) {
+      setIsContactScrolled(true);
+    }
+  }
+
+  const listener = () => {
+    if(homeContnts[0] && contactInfo[0]) {
+      setHomeContntsFromTop(homeContnts[0].getBoundingClientRect().top);
+      setcontactInfoFromTop(contactInfo[0].getBoundingClientRect().top);
+    }
+  };
+
   useEffect(() => {
     const container = document.getElementById('map');
     const mapOption  = {
@@ -42,14 +71,18 @@ export default function Home() {
     // 지도 확대 축소를 제어할 수 있는  줌 컨트롤을 생성합니다
     const zoomControl = new kakao.maps.ZoomControl();
     map.addControl(zoomControl, kakao.maps.ControlPosition.RIGHT);   
-  
-    }, []);
 
+    window.addEventListener('scroll', listener);
+    showHomeContnts(homeContntsFromTop);
+    showContact(contactInfoFromTop);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [homeContntsFromTop, contactInfoFromTop]);
+  
   return (
     <>
       <div className="HomeContainer">
         <img src="/images/homePic.webp" alt=""/>
-        <div className="HomeContnts">
+        <div className={isHomeContntsScrolled ? 'HomeContnts HomeContntsScrolled' : 'HomeContnts'}>
           <div className="HomeTitle">IROOM STUDY</div>
           <div className="HomeDesc">2인 ~ 15인 무인 스터디룸</div>
           <div className="HomeBtn">
@@ -60,12 +93,14 @@ export default function Home() {
       <div className="ContactContainer">
         <img src="/images/contant_img.jpg" alt=""/>
         <div className="ContactBox">
-          <div className="ContactTitle">CONTACT US</div>
-          <div className="ContactAddress">
-            찾아 오는 길:&nbsp;
-            <a href="https://map.naver.com/v5/search/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EA%B4%91%EC%A7%84%EA%B5%AC%20%ED%99%94%EC%96%91%EB%8F%99%20111-159" target="_blank" rel="noreferrer">서울특별시 광진구 화양동 111-159 2층 모임공간 이룸</a>
+          <div className={isContactScrolled ? "ContactInfo ContactScrolled" : "ContactInfo"}>
+            <div className="ContactTitle">CONTACT US</div>
+            <div className="ContactAddress">
+              찾아 오는 길:&nbsp;
+              <a href="https://map.naver.com/v5/search/%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EA%B4%91%EC%A7%84%EA%B5%AC%20%ED%99%94%EC%96%91%EB%8F%99%20111-159" target="_blank" rel="noreferrer">서울특별시 광진구 화양동 111-159 2층 모임공간 이룸</a>
+            </div>
+            <div className="ContactTel">TEL: 02-461-2030</div>
           </div>
-          <div className="ContactTel">TEL: 02-461-2030</div>
           <div id="map" className="KakaoMap"></div> 
         </div>
       </div>

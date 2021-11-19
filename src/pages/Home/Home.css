@@ -11,12 +11,18 @@
 }
 
 .HomeContnts {
+  opacity: 0;
   z-index: 1;
   position: absolute;
   margin-left: calc((100% - 918px) / 2);
   display: flex;
   justify-content: center;
   flex-direction: column;
+}
+
+.HomeContntsScrolled {
+  opacity: 1;
+  transition: 5s;
 }
 
 .HomeTitle {
@@ -74,6 +80,15 @@
   width: 608px;
   margin-top: 99px;
   position: absolute;
+}
+
+.ContactInfo {
+  opacity: 0;
+}
+
+.ContactScrolled {
+  opacity: 1;
+  transition: 3s;
 }
 
 .ContactTitle {

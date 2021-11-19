@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Link, NavLink, useNavigate } from "react-router-dom";
 import { authService } from "../firebase";
 import { signOut } from "firebase/auth";
@@ -7,13 +7,20 @@ import "./Navigation.css";
 export default function Navigation({ isLoggedIn }) {
   const auth = authService;
   const navigate = useNavigate();
+  const [isScrolled, setIsScrolled] = useState(false);
+
   const onLogOutClick = () => {
     signOut(auth);
     navigate("/");
   };
+
+  useEffect(() => {
+    setIsScrolled(true);
+  }, []);
+
   return (
     <div className="HeaderContainer">
-      <div className="HeaderBox">
+      <div className={isScrolled ? "HeaderBox scrolled" : "HeaderBox"}>
         <Link to="/" className="HeaderTitle">
           모임공간 이룸
         </Link>
@@ -36,10 +43,11 @@ export default function Navigation({ isLoggedIn }) {
               로그인
             </NavLink>
           )}
-
-          <NavLink to="/profile" className="NavBtn">
-            마이페이지
-          </NavLink>
+          {isLoggedIn && (
+            <NavLink to="/profile" className="NavBtn">
+              마이페이지
+            </NavLink>
+          )}
         </div>
       </div>
     </div>
