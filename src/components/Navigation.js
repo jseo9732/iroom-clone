@@ -43,10 +43,11 @@ export default function Navigation({ isLoggedIn }) {
               로그인
             </NavLink>
           )}
-
-          <NavLink to="/profile" className="NavBtn">
-            마이페이지
-          </NavLink>
+          {isLoggedIn && (
+            <NavLink to="/profile" className="NavBtn">
+              마이페이지
+            </NavLink>
+          )}
         </div>
       </div>
     </div>
