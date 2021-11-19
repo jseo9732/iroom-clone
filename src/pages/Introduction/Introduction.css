@@ -37,6 +37,7 @@
   position: relative;
   height: 300px;
   width: 100%;
+  margin: auto;
   display: grid;
   grid-template-columns: 50% 50%;
   grid-template-rows: 3 0% 30%;
