@@ -9,3 +9,103 @@
   width: 100%;
   filter: brightness(70%);
 }
+
+.HomeContnts {
+  z-index: 1;
+  position: absolute;
+  margin-left: calc((100% - 918px) / 2);
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.HomeTitle {
+  letter-spacing: 0.06em;
+  font-size: 119px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.HomeDesc {
+  letter-spacing: 0.45em;
+  font-size: 26px;
+  font-weight: bold;
+  color: #ffffff;
+  text-align: center;
+  margin-bottom: 70px;
+}
+
+.HomeBtn {
+  width: 191px;
+  height: 44px;
+  text-align: center;
+  background-color: #3eccb4;
+  transition: 500ms;
+  margin-left: calc((100% - 191px) / 2);
+}
+
+.HomeBtn:hover {
+  cursor: pointer;
+  background-color: #257a6c;
+  transition: 500ms;
+}
+
+.HomeBtn a {
+  font-size: 16px;
+  line-height: 44px;
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.ContactContainer {
+  height: 566px;
+  display: flex;
+  flex-direction: column;
+}
+
+.ContactContainer img {
+  height: 100%;
+}
+
+.ContactBox {
+  margin-left: calc((100% - 608px) / 2);
+  width: 608px;
+  margin-top: 99px;
+  position: absolute;
+}
+
+.ContactTitle {
+  font-size: 46px;
+  color: white;
+  text-align: center;
+}
+
+.ContactAddress {
+  margin-top: 23px;
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  padding: 4px;
+}
+
+.ContactAddress a {
+  color: white;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+}
+
+.ContactTel {
+  color: white;
+  font-size: 16px;
+  text-align: center;
+  padding: 4px;
+}
+
+.KakaoMap {
+  margin-top: 10px;
+  width: 608px;
+  height: 280px;
+  z-index: 2;
+}

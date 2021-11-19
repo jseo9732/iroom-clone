@@ -1,61 +1,46 @@
-import { useEffect, useState } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+import { Link, NavLink, useNavigate } from "react-router-dom";
+import { authService } from "../firebase";
+import { signOut } from "firebase/auth";
 import "./Navigation.css";
 
-export default function Navigation() {
-  const [currentClick, setCurrentClick] = useState(null);
-  const [prevClick, setPrevClick] = useState(null);
-
-  const onMenuClick = (e) => {
-    setCurrentClick(e.target.id);
+export default function Navigation({ isLoggedIn }) {
+  const auth = authService;
+  const navigate = useNavigate();
+  const onLogOutClick = () => {
+    signOut(auth);
+    navigate("/");
   };
-
-  useEffect(() => {
-    if (currentClick !== null) {
-      let current = document.getElementById(currentClick);
-      current.style.color = "#3eccb5";
-    }
-
-    if (prevClick !== null) {
-      let prev = document.getElementById(prevClick);
-      prev.style.color = "#ffffff";
-    }
-    setPrevClick(currentClick);
-  }, [currentClick]);
-
   return (
     <div className="HeaderContainer">
       <div className="HeaderBox">
         <Link to="/" className="HeaderTitle">
           모임공간 이룸
         </Link>
-        <ul className="HeaderMenu">
-          <li>
-            <Link to="/" id="1" onClick={onMenuClick}>
-              홈
-            </Link>
-          </li>
-          <li>
-            <Link to="/intro" id="2" onClick={onMenuClick}>
-              공간소개
-            </Link>
-          </li>
-          <li>
-            <Link to="/reservation" id="3" onClick={onMenuClick}>
-              예약하기
-            </Link>
-          </li>
-          <li>
-            <Link to="/login" id="4" onClick={onMenuClick}>
+        <div className="HeaderMenu">
+          <NavLink to="/" className="NavBtn">
+            홈
+          </NavLink>
+          <NavLink to="/intro" className="NavBtn">
+            공간소개
+          </NavLink>
+          <NavLink to="/reservation" className="NavBtn">
+            예약하기
+          </NavLink>
+          {isLoggedIn ? (
+            <div className="LogoutBtn" onClick={onLogOutClick}>
+              로그아웃
+            </div>
+          ) : (
+            <NavLink to="/login" className="NavBtn">
               로그인
-            </Link>
-          </li>
-          <li>
-            <Link to="/profile" id="5" onClick={onMenuClick}>
-              마이페이지
-            </Link>
-          </li>
-        </ul>
+            </NavLink>
+          )}
+
+          <NavLink to="/profile" className="NavBtn">
+            마이페이지
+          </NavLink>
+        </div>
       </div>
     </div>
   );

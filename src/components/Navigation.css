@@ -10,7 +10,7 @@
 }
 
 .HeaderBox {
-  width: 1000px;
+  width: 980px;
   height: 100%;
   display: flex;
   justify-content: space-between;
@@ -28,9 +28,20 @@
   display: flex;
 }
 
-.HeaderMenu a {
-  padding: 10px;
+.NavBtn {
+  padding: 15px;
   font-size: 16px;
   color: #ffffff;
   text-decoration: none;
+}
+
+.LogoutBtn {
+  padding: 15px;
+  font-size: 16px;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.active {
+  color: #3eccb5;
 }

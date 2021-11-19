@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { dbService, storageService } from "../firebase";
+import { dbService, storageService } from "../../firebase";
 import "./Introduction.css";
 
 export default function Introduction() {
