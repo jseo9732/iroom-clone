@@ -10,11 +10,14 @@
 }
 
 .HeaderBox {
+  opacity: 0;
   width: 980px;
   height: 100%;
   display: flex;
   justify-content: space-between;
   align-items: center;
+  position: relative;
+  top: -60px;
 }
 
 .HeaderTitle {
@@ -44,4 +47,10 @@
 
 .active {
   color: #3eccb5;
+}
+
+.scrolled {
+  opacity: 1;
+  transition: 3s;
+  top: 0;
 }
