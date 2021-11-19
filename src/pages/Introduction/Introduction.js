@@ -1,20 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
+import Footer from "../../components/Footer";
 import { dbService, storageService } from "../../firebase";
 import "./Introduction.css";
 
 export default function Introduction() {
-
-    const Hover = () => {
-        const [isListHover, setIsListHover] = useState(false);
-        
-        return (
-            <li>
-            onMouseOver={() => setIsListHover(true)}
-            onMouseOut={() => setIsListHover(false)}
-          </li>
-        ) 
-    }
-
     return ( 
     <div className="IntroParents">
     <div className="IntroIntro">
@@ -26,24 +15,32 @@ export default function Introduction() {
     </div>
 
     <div className="IntroImages">
+
         <div className="room4Box">
-           <img className="room4" alt="room4" src={require('../Introduction/images/4인.jpg').default}/>    
+            <div className="overlay">4인 스터디룸</div> 
+            <img className="room4" alt="room4" src={require('../Introduction/images/4인.jpg').default}/>         
         </div>
+        
 
         <div className="room6Box">
+            <div className="overlay">6인 스터디룸</div>
             <img className="room6" alt="room6" src={require('../Introduction/images/6인.png').default} />
         </div>
    
 
         <div className="room10Box">
+            <div className="overlay">10인 스터디룸</div>
             <img className="room10" alt="room10" src={require('../Introduction/images/10인.jpg').default} />
         </div>
 
          <div className="room20Box">
-             <img className="room20" alt="room20" src={require('../Introduction/images/20인.webp').default} />  
+            <div className="overlay">20인 스터디룸</div>
+            <img className="room20" alt="room20" src={require('../Introduction/images/20인.webp').default} />  
         </div>
+
     </div>
     </div>
 
+    
     );
 }
