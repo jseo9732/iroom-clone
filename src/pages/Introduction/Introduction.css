@@ -1,5 +1,6 @@
 .html {
   height: 883.2px;
+  animation: fadein 0.7s;
 }
 .IntroParents {
   margin-top: 69px;
