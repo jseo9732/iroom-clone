@@ -30,19 +30,22 @@ export default function RoomInfo4() {
     let roomName4 ="";
     let roomInfo1_4 ="";
     let roomInfo2_4 ="";
+    let roomInfo3_4 ="";
 
     if(RoomInfo.RoomInfo !== undefined)
         {
             roomName4 = RoomInfo.RoomInfo[0].roomName;
             roomInfo1_4 = RoomInfo.RoomInfo[0].roomInfo1;
             roomInfo2_4 = RoomInfo.RoomInfo[0].roomInfo2;
+            roomInfo3_4 = RoomInfo.RoomInfo[0].roomInfo3;
         } 
         
     return(
         <div className="container">
             <span>{roomName4}</span><br/>
             <span>{roomInfo1_4}</span><br/> 
-            <span>{roomInfo2_4}</span><br/> 
+            <span>{roomInfo2_4}</span><br/>
+            <span>{roomInfo3_4}</span><br/>
         </div>
     );
     }

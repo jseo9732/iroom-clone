@@ -26,13 +26,24 @@ export default function RoomInfo20() {
     }, [])
 
     let roomName20 ="";
+    let roomInfo1_20 ="";
+    let roomInfo2_20 ="";
+    let roomInfo3_20 ="";
 
     if(RoomInfo.RoomInfo !== undefined)
-            roomName20 = RoomInfo.RoomInfo[0].roomName;
+      {
+        roomName20 = RoomInfo.RoomInfo[0].roomName;
+        roomInfo1_20 = RoomInfo.RoomInfo[0].roomInfo1;
+        roomInfo2_20 = RoomInfo.RoomInfo[0].roomInfo2;
+        roomInfo3_20 = RoomInfo.RoomInfo[0].roomInfo3;
+      }
     
     return(
         <div className="container">
-            <span>{roomName20}</span> 
+            <span>{roomName20}</span><br/>
+            <span>{roomInfo1_20}</span><br/>
+            <span>{roomInfo2_20}</span><br/>
+            <span>{roomInfo3_20}</span> 
         </div>
     );
 }
