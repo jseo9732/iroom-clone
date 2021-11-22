@@ -34,6 +34,11 @@ export default function Navigation({ isLoggedIn }) {
           <NavLink to="/reservation" className="NavBtn">
             예약하기
           </NavLink>
+          {isLoggedIn && (
+            <NavLink to="/profile" className="NavBtn">
+              마이페이지
+            </NavLink>
+          )}
           {isLoggedIn ? (
             <div className="LogoutBtn" onClick={onLogOutClick}>
               로그아웃
@@ -41,11 +46,6 @@ export default function Navigation({ isLoggedIn }) {
           ) : (
             <NavLink to="/login" className="NavBtn">
               로그인
-            </NavLink>
-          )}
-          {isLoggedIn && (
-            <NavLink to="/profile" className="NavBtn">
-              마이페이지
             </NavLink>
           )}
         </div>

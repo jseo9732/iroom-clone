@@ -3,6 +3,7 @@ import { useNavigate } from "react-router-dom";
 import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
+  updateProfile,
 } from "firebase/auth";
 import { authService } from "../../firebase";
 import "./Login.css"
@@ -10,7 +11,8 @@ import "./Login.css"
 export default function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [newAccount, setNewAccount] = useState(true);
+  const [displayName, setDisplayName] = useState("");
+  const [newAccount, setNewAccount] = useState(false);
   const [error, setError] = useState("");
   const navigate = useNavigate();
   const auth = authService;
@@ -23,6 +25,8 @@ export default function Login() {
       setEmail(value);
     } else if (name === "password") {
       setPassword(value);
+    } else if (name === "displayName") {
+      setDisplayName(value);
     }
   };
 
@@ -31,6 +35,9 @@ export default function Login() {
     try {
       if (newAccount) {
         await createUserWithEmailAndPassword(auth, email, password)
+        .then(() => {
+          updateProfile(auth.currentUser,{ displayName: displayName})
+        })
         .then((res) => {
           navigate('/');
         });
@@ -54,6 +61,17 @@ export default function Login() {
       <img src="/images/login_img.jpg" alt="" className="BackImg"/>
       <div className="LoginFormContainer">
         <form onSubmit={onSubmit}>
+          {newAccount ? 
+            <input 
+              name="displayName"
+              type="text"
+              placeholder="이름을 입력하세요"
+              required
+              value={displayName}
+              onChange={onChange}
+              className="LoginInput"
+            /> 
+            : ""}
           <input
             name="email"
             type="text"
