@@ -55,7 +55,7 @@ export default function RoomInfo20() {
             <div className="iconBox2">
                 <span>24 hour access</span>
                 <span>Fully Equiped</span>
-                <span>Up to 6 Number of People</span>
+                <span>Up to 20 Number of People</span>
                 <span>Free WIFI</span>
             </div>
 
