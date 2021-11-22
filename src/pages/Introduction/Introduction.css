@@ -57,14 +57,20 @@
   position: relative;
 }
 
+.room4Box :not(:hover),
+.room6Box :not(:hover),
+.room10Box :not(:hover),
+.room20Box :not(:hover) {
+  transition: 1s;
+}
+
 .room4Box :hover,
 .room6Box :hover,
 .room10Box :hover,
 .room20Box :hover,
 .overlay:hover .room4Box {
+  transition: 1s;
   filter: brightness(70%);
-  -webkit-filter: blur(20px);
-  transition: 0.5s;
 }
 
 .overlay {
@@ -77,6 +83,7 @@
   font-family: "Noto Sans KR", sans-serif;
   font-size: 40px;
   font-weight: 700;
+  color: white;
 
   align-items: center;
   justify-content: center;
@@ -86,6 +93,8 @@
   top: 50%;
   margin-left: -125px;
   margin-top: -25px;
+
+  transition: 1s;
 }
 
 .room4Box:hover .overlay,
