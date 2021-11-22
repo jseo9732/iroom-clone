@@ -6,8 +6,80 @@ body {
 }
 
 .container {
+  margin-top: 3%;
+  width: 43%;
+  height: 70%;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
+  background-color: white;
+  font-family: "Noto Sans KR", sans-serif;
+  box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, 0.6));
+}
+
+.container h1 {
+  padding-top: 10%;
+  font-size: 36px;
+  font-weight: 650;
+  text-align: center;
+}
+
+.container h2 {
+  padding-top: 3%;
+  font-size: 20px;
+  text-align: center;
+}
+
+.infoBox div {
+  width: 50%;
+  height: auto;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.iconBox1 {
+  display: flex;
+  padding-top: 7.5%;
+}
+
+.iconBox1 i {
+  flex: 1;
+  font-size: 40px;
+  text-align: center;
+}
+
+.iconBox2 {
+  display: flex;
+  padding-top: 2.5%;
+}
+
+.iconBox2 span {
+  flex: 1;
+  font-size: 15px;
+  text-align: center;
+}
+
+.btnToIntro {
+  margin-top: 5%;
+  width: 191px;
+  height: 44px;
+  text-align: center;
+  background-color: #3eccb4;
+  transition: 500ms;
+  margin-left: calc((100% - 191px) / 2);
+  text-decoration: none;
+}
+
+.btnToIntro:hover {
+  cursor: pointer;
+  background-color: #257a6c;
+  transition: 500ms;
+}
+
+.btnToIntro a {
+  text-decoration: none;
+  color: white;
+  line-height: 44px;
 }

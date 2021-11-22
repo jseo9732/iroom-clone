@@ -1,10 +1,9 @@
 import React from "react";
 import "./roomInfo.css";
-import { dbService, storageService } from "../../firebase";
+import { dbService } from "../../firebase";
 import { useState, useEffect } from "react"
-import { useNavigate } from "react-router-dom"
 import { collection, query, where, getDocs } from "firebase/firestore";
-
+import { Link } from "react-router-dom"
 
 export default function RoomInfo6() {
 
@@ -40,10 +39,29 @@ export default function RoomInfo6() {
     
     return(
         <div className="container">
-            <span>{roomName6}</span><br/>
-            <span>{roomInfo1_6}</span><br/>
-            <span>{roomInfo2_6}</span><br/>
-            <span>{roomInfo3_6}</span> 
+        <div className="infoBox">
+            <h1>{roomName6}</h1><br/>
+            <h2>{roomInfo1_6}</h2><br/><br/><br/>
+            <div>1️⃣ &nbsp;{roomInfo2_6}</div><br/><br/><br/>
+            <div>2️⃣ &nbsp;{roomInfo3_6}</div> 
         </div>
+        <div className="iconBox1">
+                <i class="far fa-clock"></i>
+                <i class="fas fa-desktop"></i>
+                <i class="fas fa-users"></i>
+                <i class="fas fa-wifi"></i>
+            </div>
+            <div className="iconBox2">
+                <span>24 hour access</span>
+                <span>Fully Equiped</span>
+                <span>Up to 6 Number of People</span>
+                <span>Free WIFI</span>
+            </div>
+
+            <div className="btnToIntro">
+            <Link to="/intro">Go Back</Link>
+            </div>
+        </div>
+        
     );
 }
