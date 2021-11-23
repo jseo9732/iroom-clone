@@ -1,9 +1,7 @@
 import React from "react";
 import Footer from "../../components/Footer";
-import { dbService, storageService } from "../../firebase";
 import "./Introduction.css";
-import { Link, NavLink, useNavigate } from "react-router-dom";
-
+import { Link } from "react-router-dom";
 
 export default function Introduction() {
     return ( 
@@ -47,8 +45,8 @@ export default function Introduction() {
             <img className="room20" alt="room20" src={require('../Introduction/images/20인.webp').default} /> 
             </Link> 
         </div>
-
     </div>
     </div>
-    );
+    
+     );
 }

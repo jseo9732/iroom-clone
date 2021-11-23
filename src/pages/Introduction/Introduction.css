@@ -1,6 +1,10 @@
+.IntroContainer {
+  position: relative;
+}
 .IntroParents {
   margin-top: 69px;
   height: 100%;
+  position: relative;
 }
 
 .IntroContents {
