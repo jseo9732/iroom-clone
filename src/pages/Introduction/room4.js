@@ -4,9 +4,6 @@ import { dbService } from "../../firebase";
 import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { collection, query, where, getDocs } from "firebase/firestore";
-import styled from "styled-components";
-import bg from "./images/1.jpg"; 
-
 
 export default function RoomInfo4() {
 
@@ -24,9 +21,6 @@ export default function RoomInfo4() {
         }
       }
         getRoomInfo().then(data => setRoomInfos(data));
-
-         
-
     }, [])
 
     let roomName4 ="";
@@ -41,19 +35,10 @@ export default function RoomInfo4() {
             roomInfo2_4 = RoomInfo.RoomInfo[0].roomInfo2;
             roomInfo3_4 = RoomInfo.RoomInfo[0].roomInfo3;
         } 
-        
-    const Container = styled.div`
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        background: url(${bg});
-        background-size: cover;
-    `;
 
     return(
-        <Container>
+        <div className="bgContainer">
+            <img className="bgImage" src={require('../Introduction/images/1.jpg').default} alt=""/>
         <div className="container">
             <div className="infoBox">
                 <h1>{roomName4}</h1><br/>
@@ -78,7 +63,7 @@ export default function RoomInfo4() {
             <Link to="/intro">Go Back</Link>
             </div>
         </div>
-        </Container>
+        </div>
     );
     }
     
