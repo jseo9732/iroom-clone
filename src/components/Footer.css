@@ -17,10 +17,11 @@
 
 .FooterLetter {
   color: #bab8b8;
+  padding: 15px;
 }
 
 .FooterIcon img {
   width: 26px;
   height: 26px;
-  margin-left: 15px;
+  margin-right: 15px;
 }
