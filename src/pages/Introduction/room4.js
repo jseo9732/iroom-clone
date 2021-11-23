@@ -43,14 +43,14 @@ export default function RoomInfo4() {
         } 
         
     const Container = styled.div`
-         position: absolute;
+        position: absolute;
         top: 0;
         left: 0;
         width: 100%;
         height: 100%;
         background: url(${bg});
         background-size: cover;
-        `;
+    `;
 
     return(
         <Container>
