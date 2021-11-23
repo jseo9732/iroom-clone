@@ -9,9 +9,19 @@ export default function Navigation({ isLoggedIn }) {
   const navigate = useNavigate();
   const [isScrolled, setIsScrolled] = useState(false);
 
+  const [isMenuShow, setIsMenuShow] = useState(false);
+  const onMenuShowClick = () => {
+    setIsMenuShow(!isMenuShow);
+  };
+
+  const onBtnClick = () => {
+    setIsMenuShow(false);
+  };
+
   const onLogOutClick = () => {
     signOut(auth);
     navigate("/");
+    setIsMenuShow(false);
   };
 
   useEffect(() => {
@@ -21,21 +31,21 @@ export default function Navigation({ isLoggedIn }) {
   return (
     <div className="HeaderContainer">
       <div className={isScrolled ? "HeaderBox scrolled" : "HeaderBox"}>
-        <Link to="/" className="HeaderTitle">
+        <Link to="/" className="HeaderTitle" onClick={onBtnClick}>
           모임공간 이룸
         </Link>
-        <div className="HeaderMenu">
-          <NavLink to="/" className="NavBtn">
+        <div className={isMenuShow ? "HeaderMenu active" : "HeaderMenu"}>
+          <NavLink to="/" className="NavBtn" onClick={onBtnClick}>
             홈
           </NavLink>
-          <NavLink to="/intro" className="NavBtn">
+          <NavLink to="/intro" className="NavBtn" onClick={onBtnClick}>
             공간소개
           </NavLink>
-          <NavLink to="/reservation" className="NavBtn">
+          <NavLink to="/reservation" className="NavBtn" onClick={onBtnClick}>
             예약하기
           </NavLink>
           {isLoggedIn && (
-            <NavLink to="/profile" className="NavBtn">
+            <NavLink to="/profile" className="NavBtn" onClick={onBtnClick}>
               마이페이지
             </NavLink>
           )}
@@ -44,11 +54,14 @@ export default function Navigation({ isLoggedIn }) {
               로그아웃
             </div>
           ) : (
-            <NavLink to="/login" className="NavBtn">
+            <NavLink to="/login" className="NavBtn" onClick={onBtnClick}>
               로그인
             </NavLink>
           )}
         </div>
+      </div>
+      <div className="MenuBtn" onClick={onMenuShowClick}>
+        <i className="fas fa-bars"></i>
       </div>
     </div>
   );
