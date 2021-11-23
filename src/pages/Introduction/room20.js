@@ -41,13 +41,13 @@ export default function RoomInfo20() {
     
       const Container = styled.div`
         position: absolute;
-       top: 0;
-       left: 0;
-       width: 100%;
-       height: 100%;
-       background: url(${bg});
-       background-size: cover;
-       `;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: url(${bg});
+        background-size: cover;
+    `;
 
     return(
       <Container>
