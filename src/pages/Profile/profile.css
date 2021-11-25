@@ -1,7 +1,7 @@
 .userInfoWrapper {
   position: relative;
   background: #06b495;
-  padding: 20px 0 11px;
+  padding: 30px 0 11px;
   /* display: flex;
   flex-direction: column; */
 }
@@ -85,6 +85,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  cursor: pointer;
 }
 
 /* --userReserve-- */
@@ -213,4 +214,11 @@
   font-size: .9rem;
   letter-spacing: -0.3px;
   cursor: pointer;
+}
+
+/*--responsive design--*/
+@media screen and (max-width: 767px) {
+  .userReserveInfo > span {
+    margin-left: 35px;
+  }
 }
