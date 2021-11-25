@@ -5,7 +5,7 @@ import { useState, useEffect } from "react"
 import { Link } from "react-router-dom"
 import { collection, query, where, getDocs } from "firebase/firestore";
 
-export default function RoomInfos(RoomNum) {
+export default function RoomInfos( RoomNum ) {
 
     const [RoomInfo, setRoomInfos] = useState([""]);
     useEffect(()=>{
@@ -21,13 +21,14 @@ export default function RoomInfos(RoomNum) {
         }
       }
         getRoomInfo().then(data => setRoomInfos(data));
-    }, [RoomNum])
+    }, [])
 
     let roomName = "";
     let roomInfo1 = "";
     let roomInfo2 = "";
     let roomInfo3 = "";
 
+    
     if(RoomInfo.RoomInfo !== undefined)
         {
             roomName = RoomInfo.RoomInfo[0].roomName;

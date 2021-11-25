@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { RoomInfo, Home, Intro, Reservation, Login, Profile } from "../pages/PagesIndex";
+import { RoomInfos, Home, Intro, Reservation, Login, Profile } from "../pages/PagesIndex";
 import Navigation from "./Navigation";
 import Footer from "./Footer";
 
@@ -13,7 +13,7 @@ export default function AppRouter({ refreshUser, isLoggedIn, userObj }) {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/intro" element={<Intro />} />
-          <Route path="/intro/roomInfo" element={<RoomInfo />} />
+          <Route path="/intro/roomInfo" element={<RoomInfos />} />
 
           {/* <Route path="/6" element={<RoomInfo6 />} /> 
           <Route path="/10" element={<RoomInfo10 />} />
