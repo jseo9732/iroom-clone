@@ -1,10 +1,10 @@
 import { useState } from "react"
 import { useNavigate } from "react-router-dom"
 import "./reservation.css";
-import { collection, addDoc } from "firebase/firestore";
+import { doc, setDoc } from "firebase/firestore";
 import { dbService } from "../../firebase"
 
-function ReserveModal({uid, toggleReserveModal}) {
+function ReserveModal({uid, username, toggleReserveModal}) {
   const [phoneNum, setPhoneNum] = useState("")
   const [room, setRoom] = useState("")
   const [reserveDate, setReserveDate] = useState("")
@@ -22,22 +22,24 @@ function ReserveModal({uid, toggleReserveModal}) {
       reserveTime,
       reserveRemainTime,
     }
-    const ok = window.confirm("위의 정보로 예약하시겠습니까?")
-    if(ok) {
-      console.log(reserveObj);
-      console.log(ok)
-      try {
-        await addDoc(collection(dbService, "reservations"), reserveObj);
-      } catch (e) {
-        console.error("Error adding document: ", e);
+    if (phoneNum && room && reserveDate && reserveTime && reserveRemainTime) {
+      const ok = window.confirm("위의 정보로 예약하시겠습니까?")
+      if(ok) {
+        try {
+          await setDoc(doc(dbService, "reservations", `${reserveObj.createdAt}`), reserveObj);
+        } catch (e) {
+          console.error("Error adding document: ", e);
+        }
+        setPhoneNum("");
+        setRoom("");
+        setReserveDate("");
+        setReserveTime("");
+        setReserveRemainTime("");
+        toggleReserveModal();
+        window.alert("예약되었습니다")
       }
-      setPhoneNum("");
-      setRoom("");
-      setReserveDate("");
-      setReserveTime("");
-      setReserveRemainTime("");
-      toggleReserveModal();
-      window.alert("예약되었습니다")
+    } else {
+      window.alert("정보를 전부 입력해주세요")
     }
   }
   const onPhoneNumChange = (e) => {
@@ -47,7 +49,6 @@ function ReserveModal({uid, toggleReserveModal}) {
   const onRoomChange = (e) => {
     const { target : { value } } = e
     setRoom(value);
-    console.log(value)
   }
   const onReserveDateChange = (e) => {
     const { target : { value } } = e
@@ -59,7 +60,6 @@ function ReserveModal({uid, toggleReserveModal}) {
   }
   const onReserveRemainTimeChange = (e) => {
     const { target : { value } } = e
-    console.log(value)
     setReserveRemainTime(value);
   }
   return (
@@ -74,7 +74,7 @@ function ReserveModal({uid, toggleReserveModal}) {
           <ul>
             <li>
               <p>예약자</p>
-              <p>홍길동</p> {/* 유저아이디 불러오기 */}
+              <p>{username}</p> {/* 유저아이디 불러오기 */}
             </li>
             <li>
               <p>휴대폰</p>
@@ -89,10 +89,10 @@ function ReserveModal({uid, toggleReserveModal}) {
               <p>예약공간</p>
               <select onChange={onRoomChange}>
                 <option value="">--방을 선택하세요--</option>
-                <option value="2인실">2인실</option>
                 <option value="4인실">4인실</option>
                 <option value="6인실">6인실</option>
-                <option value="15인실">15인실</option>
+                <option value="10인실">10인실</option>
+                <option value="20인실">20인실</option>
               </select>
             </li>
             <li>
@@ -147,6 +147,7 @@ export default function Reservation({userObj, isLoggedIn}) {
         ( isLoggedIn ? 
             <ReserveModal 
             uid={userObj.uid} 
+            username={userObj.displayName}
             isLoggedIn={isLoggedIn}
             toggleReserveModal={toggleReserveModal} 
             />
