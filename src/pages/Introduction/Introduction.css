@@ -21,10 +21,6 @@
   text-align: center;
 }
 
-.IntroIntro p {
-  font-size: 15px;
-}
-
 .IntroTitle {
   margin-top: 10%;
   font-size: 46px;
@@ -105,5 +101,24 @@
   transition: 1s;
 }
 
-.FooterBox {
+@media screen and (max-width: 767px) {
+  .IntroParents {
+    margin-top: 80px;
+  }
+
+  .room4Box,
+  .room6Box,
+  .room10Box,
+  .room20Box {
+    height: 200px;
+    position: relative;
+  }
+
+  .IntroTitle {
+    font-size: 40px;
+  }
+
+  .overlay {
+    font-size: 30px;
+  }
 }
