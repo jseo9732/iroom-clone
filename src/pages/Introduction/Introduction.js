@@ -1,7 +1,7 @@
 import React from "react";
 import "./Introduction.css";
 import { Link } from "react-router-dom";
-import RoomInfos from "./roomInfo";
+import Footer from "../../components/Footer";
 
 export default function Introduction() {
 
@@ -16,7 +16,6 @@ export default function Introduction() {
     </div>
 
     <div className="IntroImages">
-
         <div className="room4Box">   
             <div className="overlay">4인 스터디룸</div> 
             <Link to="/intro/4" className="BtnToRoom">
@@ -46,8 +45,9 @@ export default function Introduction() {
             <img className="room20" alt="room20" src={require('../Introduction/images/20인.webp').default} /> 
             </Link> 
         </div>
+        </div>
+        
     </div>
-    </div>
-    
      );
-}
+
+    }
