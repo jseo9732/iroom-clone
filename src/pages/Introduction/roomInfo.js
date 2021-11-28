@@ -2,21 +2,23 @@ import React from "react";
 import "./roomInfo.css";
 import { dbService } from "../../firebase";
 import { useState, useEffect } from "react"
-import { Link } from "react-router-dom"
+import { Link, useParams } from "react-router-dom"
 import { collection, query, where, getDocs } from "firebase/firestore";
 
-export default function RoomInfos( RoomNum ) {
+
+export default function RoomInfos() {
+    const a = useParams();
 
     const [RoomInfo, setRoomInfos] = useState([""]);
     useEffect(()=>{
      const getRoomInfo = async () => {
-        const q = query(collection(dbService, "roomInfo"), where("max", "==", RoomNum));
+        const q = query(collection(dbService, "roomInfo"), where("max", "==", parseInt(a.roomNum)));
         const querySnapshot = await getDocs(q);
         let RoomInfo = [];
         querySnapshot.forEach((doc) => {
                RoomInfo.push(doc.data())
         })
-            return {
+        return {
             RoomInfo
         }
       }
@@ -28,18 +30,17 @@ export default function RoomInfos( RoomNum ) {
     let roomInfo2 = "";
     let roomInfo3 = "";
 
-    
     if(RoomInfo.RoomInfo !== undefined)
         {
             roomName = RoomInfo.RoomInfo[0].roomName;
             roomInfo1 = RoomInfo.RoomInfo[0].roomInfo1;
             roomInfo2 = RoomInfo.RoomInfo[0].roomInfo2;
             roomInfo3 = RoomInfo.RoomInfo[0].roomInfo3;
-        } 
+        }
 
     return(
         <div className="bgContainer">
-            <img className="bgImage" src={require('../Introduction/images/1.jpg').default} alt=""/>
+            <img className="bgImage" src={require(`../Introduction/images/${a.roomNum}.jpg`).default} alt=""/>
         <div className="container">
             <div className="infoBox">
                 <h1>{roomName}</h1><br/>
@@ -56,7 +57,7 @@ export default function RoomInfos( RoomNum ) {
             <div className="iconBox2">
                 <span>24 hour access</span>
                 <span>Fully Equiped</span>
-                <span>Up to 4 Number of People</span>
+                <span>Up to {a.roomNum} Number of People</span>
                 <span>Free WIFI</span>
             </div>
 

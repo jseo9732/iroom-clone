@@ -13,7 +13,7 @@ export default function AppRouter({ refreshUser, isLoggedIn, userObj }) {
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route path="/intro" element={<Intro />} />
-          <Route path="/intro/roomInfo" element={<RoomInfos />} />
+          <Route path="/intro/:roomNum" element={<RoomInfos />} />
 
           {/* <Route path="/6" element={<RoomInfo6 />} /> 
           <Route path="/10" element={<RoomInfo10 />} />
