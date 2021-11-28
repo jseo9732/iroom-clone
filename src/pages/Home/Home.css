@@ -8,15 +8,20 @@
 .HomeContainer img {
   width: 100%;
   filter: brightness(70%);
+  object-fit: cover;
+  object-position: 50% 50%;
 }
 
 .HomeContnts {
+  width: 80%;
   opacity: 0;
   z-index: 1;
   position: absolute;
-  margin-left: calc((100% - 918px) / 2);
+  left: 50%;
+  transform: translateX(-50%);
   display: flex;
   justify-content: center;
+  align-items: center;
   flex-direction: column;
 }
 
@@ -49,7 +54,6 @@
   text-align: center;
   background-color: #3eccb4;
   transition: 500ms;
-  margin-left: calc((100% - 191px) / 2);
 }
 
 .HomeBtn:hover {
@@ -69,6 +73,7 @@
   height: 566px;
   display: flex;
   flex-direction: column;
+  position: relative;
 }
 
 .ContactContainer img {
@@ -76,10 +81,11 @@
 }
 
 .ContactBox {
-  margin-left: calc((100% - 608px) / 2);
   width: 608px;
   margin-top: 99px;
   position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .ContactInfo {
@@ -123,4 +129,61 @@
   width: 608px;
   height: 280px;
   z-index: 2;
+}
+
+@media screen and (max-width: 767px) {
+  .HomeContainer {
+    margin-top: 80px;
+    height: 457px;
+  }
+
+  .HomeContainer img {
+    height: 100%;
+  }
+
+  .HomeTitle {
+    font-size: 45px;
+    margin-bottom: 9px;
+  }
+
+  .HomeDesc {
+    font-size: 15px;
+    margin-bottom: 46px;
+  }
+
+  .HomeBtn {
+    width: 160px;
+    height: 40px;
+  }
+
+  .HomeBtn a {
+    font-size: 13px;
+    line-height: 40px;
+  }
+
+  .ContactBox {
+    width: 90%;
+  }
+
+  .ContactTitle {
+    font-size: 21px;
+  }
+
+  .ContactAddress {
+    margin-top: 18px;
+    font-size: 13px;
+    line-height: 1.7em;
+  }
+
+  .ContactTel {
+    font-size: 13px;
+  }
+
+  .ContactBox {
+    width: 90%;
+  }
+
+  .KakaoMap {
+    width: 100%;
+  }
 }

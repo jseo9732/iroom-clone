@@ -1,10 +1,44 @@
 import { useState, useEffect } from "react"
-import { useNavigate } from "react-router-dom"
-import { collection, query, where, getDocs } from "firebase/firestore";
+import { collection, query, where, getDocs, doc, deleteDoc } from "firebase/firestore";
 import { dbService } from "../../firebase"
 import "./profile.css";
 
+// function ChangeProfile({currentEmail}) {
+//   const [email, setEmail] = useState("")
+//   const onSubmitChangedEmail = (e) => {
+//     e.preventDefault();
+//     console.log('d')
+//     updateEmail(authService.currentUser, email).then(() => {
+//       window.alert("업데이트 되었습니다")
+//       setEmail("")
+//     }).catch((error) => {
+//       console.log(error)
+//     });
+//   }
+//   const onEmailChange = (e) => {
+//     const { target : { value } } = e
+//     setEmail(value)
+//     console.log(email)
+//   }
+//   return (
+//     <form onSubmit={onSubmitChangedEmail}>
+//       <input
+//         type="text"
+//         placeholder={currentEmail}
+//         onChange={onEmailChange}
+//       />
+//     </form>
+//   )
+// }
+
 function UserReserveList({ reserveObj }) {
+  const onCancelClick = async () => {
+    const ok = window.confirm("해당 예약을 취소하시겠습니까?")
+    if(ok) {
+      await deleteDoc(doc(dbService, "reservations", `${reserveObj.createdAt}`));
+      window.alert("예약 취소되었습니다")
+    }
+  }
   return (
     <li>
       <div className="userReserveTop">
@@ -27,8 +61,7 @@ function UserReserveList({ reserveObj }) {
           <span>{reserveObj.phoneNum}</span>
         </p>
         <div className="userReserveBtnGroup">
-          <div className="userReserveBtn">예약 수정</div>
-          <div className="userReserveBtn">예약 삭제</div>
+          <div className="userReserveBtn" onClick={onCancelClick}>예약 취소</div>
         </div>
       </div>
     </li>
@@ -37,12 +70,12 @@ function UserReserveList({ reserveObj }) {
 
 
 export default function Profile({ userObj, isLoggedIn }) {
-  //redirect to login page
-  let navigate = useNavigate();
-  const redirectLogin = () => {
-    const ok = window.alert("로그인 후 이용해주세요");
-    if (ok) {navigate('/')}; //redirect되지 않습니다..
-  }
+  // //change profile email
+  // const [isClickedChangeBtn, setIsClickedChangeBtn] = useState(false)
+  // const onChangedClick = () => {
+  //   setIsClickedChangeBtn(prev => !prev)
+  // }
+
   //get reservation data
   const [reserveDataArray, setReserveDataArray] = useState([]);
   useEffect(()=>{
@@ -75,7 +108,7 @@ export default function Profile({ userObj, isLoggedIn }) {
                 </svg>
               </div>
               <div className="userDesc">
-                <p>UserName</p>
+                <p>{userObj.displayName}</p>
                 <div className="userDescList">
                   <p>
                     <span>이메일</span>
@@ -88,9 +121,9 @@ export default function Profile({ userObj, isLoggedIn }) {
                 </div>
               </div>
             </div>
-            <div className="userInfoBottom">
+            {/* <div className="userInfoBottom">
               <div className="profileChangeBtn">정보 수정하기</div>
-            </div>
+            </div> */}
           </div>
         </section>
           <section className="userReserveWrapper">
@@ -104,7 +137,7 @@ export default function Profile({ userObj, isLoggedIn }) {
               : "예약 내역이 없습니다"}
           </ul>
         </section>
-      </div>) : redirectLogin()}
+      </div>) : null}
     </div>
   );
 }
