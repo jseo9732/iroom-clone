@@ -1,66 +1,55 @@
-import { useState } from "react"
-import { useNavigate } from "react-router-dom"
+import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./reservation.css";
 import { doc, setDoc } from "firebase/firestore";
-import { dbService } from "../../firebase"
+import { dbService } from "../../firebase";
 
 function ReserveModal({uid, username, toggleReserveModal}) {
-  const [phoneNum, setPhoneNum] = useState("")
-  const [room, setRoom] = useState("")
-  const [reserveDate, setReserveDate] = useState("")
-  const [reserveTime, setReserveTime] = useState("")
-  const [reserveRemainTime, setReserveRemainTime] = useState("")
+  const [reserveInputs, setReserveInputs] = useState({
+    phoneNum: "",
+    room: "",
+    reserveDate: "",
+    reseveTime: "",
+    reserveRemainTime: "",
+  });
+
+  const {phoneNum, room, reserveDate, reserveTime, reserveRemainTime} = reserveInputs;
 
   const onReserveSubmit = async (e) => {
     e.preventDefault();
     const reserveObj = {
+      ...reserveInputs,
       createdAt: Date.now(),
       userId: uid,
-      phoneNum,
-      room,
-      reserveDate,
-      reserveTime,
-      reserveRemainTime,
     }
     if (phoneNum && room && reserveDate && reserveTime && reserveRemainTime) {
-      const ok = window.confirm("위의 정보로 예약하시겠습니까?")
+      const ok = window.confirm("위의 정보로 예약하시겠습니까?");
       if(ok) {
         try {
           await setDoc(doc(dbService, "reservations", `${reserveObj.createdAt}`), reserveObj);
         } catch (e) {
           console.error("Error adding document: ", e);
         }
-        setPhoneNum("");
-        setRoom("");
-        setReserveDate("");
-        setReserveTime("");
-        setReserveRemainTime("");
+        setReserveInputs({
+          phoneNum: "",
+          room: "",
+          reserveDate: "",
+          reseveTime: "",
+          reserveRemainTime: "",
+        })
         toggleReserveModal();
-        window.alert("예약되었습니다")
+        window.alert("예약되었습니다");
       }
     } else {
-      window.alert("정보를 전부 입력해주세요")
+      window.alert("정보를 전부 입력해주세요");
     }
   }
-  const onPhoneNumChange = (e) => {
-    const { target : { value } } = e
-    setPhoneNum(value);
-  }
-  const onRoomChange = (e) => {
-    const { target : { value } } = e
-    setRoom(value);
-  }
-  const onReserveDateChange = (e) => {
-    const { target : { value } } = e
-    setReserveDate(value);
-  }
-  const onReserveTimeChange = (e) => {
-    const { target : { value } } = e
-    setReserveTime(value);
-  }
-  const onReserveRemainTimeChange = (e) => {
-    const { target : { value } } = e
-    setReserveRemainTime(value);
+  const onReserveChange = (e) => {
+    const { target : { value, name }} = e
+    setReserveInputs({
+      ...reserveInputs,
+      [name] : value
+    })
   }
   return (
     <div className="reserveModalWrapper">
@@ -74,20 +63,21 @@ function ReserveModal({uid, username, toggleReserveModal}) {
           <ul>
             <li>
               <p>예약자</p>
-              <p>{username}</p> {/* 유저아이디 불러오기 */}
+              <p>{username}</p>
             </li>
             <li>
               <p>휴대폰</p>
               <input
                 type="text"
+                name="phoneNum"
                 placeholder="010-1234-5678" 
-                onChange={ onPhoneNumChange }
+                onChange={ onReserveChange }
                 value={ phoneNum }
               />
             </li>
             <li>
               <p>예약공간</p>
-              <select onChange={onRoomChange}>
+              <select onChange={onReserveChange} name="room">
                 <option value="">--방을 선택하세요--</option>
                 <option value="4인실">4인실</option>
                 <option value="6인실">6인실</option>
@@ -99,22 +89,24 @@ function ReserveModal({uid, username, toggleReserveModal}) {
               <p>예약일</p>
               <input
                 type="date"
-                onChange={ onReserveDateChange }
+                name="reserveDate"
+                onChange={ onReserveChange }
               />
             </li>
             <li>
               <p>예약시간</p>
               <input
                 type="time"
-                onChange={ onReserveTimeChange }
+                name="reserveTime"
+                onChange={ onReserveChange }
               />
-              <select onChange={ onReserveRemainTimeChange }>
+              <select onChange={ onReserveChange } name="reserveRemainTime">
                 <option value="">--시간을 선택하세요--</option>
                 <option value="1">1시간</option>
                 <option value="2">2시간</option>
                 <option value="3">3시간</option>
                 <option value="4">4시간</option>
-              </select>
+              </select> 동안 예약
             </li>
           </ul>
           <input type="submit" value="예약신청" />
