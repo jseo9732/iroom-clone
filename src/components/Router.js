@@ -8,7 +8,7 @@ export default function AppRouter({ refreshUser, isLoggedIn, userObj }) {
 
   return (
     <>
-      <BrowserRouter>
+      <BrowserRouter basename="/iroom-clone/">
         <Navigation isLoggedIn={isLoggedIn} />
         <Routes>
           <Route exact path="/" element={<Home />} />
