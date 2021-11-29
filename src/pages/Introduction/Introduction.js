@@ -13,7 +13,6 @@ export default function Introduction() {
             <span>1인당 1,000원에 이용 가능, 4인 ~ 20인의 스터디 공간</span>
         </div>
     </div>
-
     <div className="IntroImages">
         <div className="room4Box">   
             <div className="overlay">4인 스터디룸</div> 
@@ -21,31 +20,25 @@ export default function Introduction() {
             <img className="room4" alt="room4" src={require('../Introduction/images/4인.jpg').default}/>
             </Link>     
         </div>
-        
-
         <div className="room6Box">
             <div className="overlay">6인 스터디룸</div>
             <Link to="/intro/6" className="BtnToRoom">
             <img className="room6" alt="room6" src={require('../Introduction/images/6인.png').default} />
             </Link>
         </div>
-   
-
         <div className="room10Box">
             <div className="overlay">10인 스터디룸</div>
             <Link to="/intro/10" className="BtnToRoom">
             <img className="room10" alt="room10" src={require('../Introduction/images/10인.jpg').default} />
             </Link>
         </div>
-
          <div className="room20Box">
             <div className="overlay">20인 스터디룸</div>
             <Link to="/intro/20" className="BtnToRoom">
             <img className="room20" alt="room20" src={require('../Introduction/images/20인.webp').default} /> 
             </Link> 
         </div>
-        </div>
-        
+        </div>    
     </div>
      );
 

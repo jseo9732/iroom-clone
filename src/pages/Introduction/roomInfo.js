@@ -25,6 +25,8 @@ export default function RoomInfos() {
         getRoomInfo().then(data => setRoomInfos(data));
     }, [])
 
+    console.log(a);
+    
     let roomName = "";
     let roomInfo1 = "";
     let roomInfo2 = "";
