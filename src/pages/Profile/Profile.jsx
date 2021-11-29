@@ -133,7 +133,7 @@ export default function Profile({ userObj, isLoggedIn }) {
             { reserveDataArray.isReserveData ?
             reserveDataArray.reserveDataArray.map(r =>
               <UserReserveList key={r.createdAt} reserveObj={r}/>)
-              : "예약 내역이 없습니다"}
+              : <p style={{marginTop: "30px"}}>예약 내역이 없습니다</p>}
           </ul>
         </section>
       </div>) : null}

@@ -222,3 +222,29 @@
     margin-left: 35px;
   }
 }
+@media screen and (max-width: 400px) {
+  .userInfoWrapper {
+    padding: 30px 0 30px;
+  }
+  .userReserve {
+    padding: 10px 20px 0;
+  }
+  .userReserveInfo > span {
+    width: 60px;
+    font-size: 1rem;
+    padding: 11px 4px;
+  }
+  .userReserveTop p:first-child {
+    font-size: 1.1rem;
+  }
+  .userReserveTop p:last-child {
+    font-size: .85rem;
+  }
+  .userReserveBottom {
+    padding: 20px 17px 18px 20px;
+    font-size: 14px;
+  }
+  .userReserveBtn {
+    font-size: 14px;
+  }
+}

@@ -162,3 +162,129 @@
     width: 450px;
   }
 }
+@media screen and (max-width: 500px) {
+  .reserveInfoWrapper{
+    width: 380px;
+    margin-left: calc(50% - 190px);
+  }
+  .reserveInfo h2 {
+    margin: 51px 0px 30px 0;
+    font-size: 40px;
+  }
+  .reserveDesc p {
+    font-size: 15px;
+  }
+  .reserveDescTop {
+    margin-bottom: 20px;
+  }
+  .reserveDescCenter {
+    margin-bottom: 45px;
+  }
+  .reserveDescBottom {
+    margin-bottom: 20px;
+  }
+  .reserveDescBottom p { 
+    font-size: 12px;
+  }
+  .reserveBtnWrapper {
+    margin-bottom: 40px;
+  }
+  .reserveBtn {
+    width: 200px;
+    height: 50px;
+  }
+  /* modal */
+  .reserveModalInner{
+    width: 380px;
+    padding: 35px 17px 30px;
+  }
+  .reserveModalInner h2 {
+    font-size: 25px;
+    padding-bottom: 40px;
+  }
+  .reserveCloseBtn {
+    font-size: 25px;
+    right: 17px;
+  }
+  .reserveModalInner ul li {
+    margin-bottom: 21px;
+  }
+  .reserveModalInner ul li:first-child p:last-child {
+    margin-top: 15px;
+    font-size:1.2rem;
+  }
+  .reserveModalInner ul li p {
+    font-size: 15px;
+  }
+  .reserveModalInner ul li input {
+    font-size: 18px;
+    padding: 10px 0;
+  }
+  .reserveModalInner ul li select {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 400px) {
+  .reserveInfoWrapper{
+    width: 340px;
+    margin-left: calc(50% - 170px);
+  }
+  .reserveDesc p {
+    font-size: 14px;
+  }
+  .reserveDescCenter {
+    margin-bottom: 40px;
+  }
+  .reserveDescBottom {
+    margin-bottom: 15px;
+  }
+  .reserveDescBottom p { 
+    font-size: 12px;
+  }
+  .reserveBtn {
+    width: 150px;
+    height: 50px;
+  }
+  /* modal */
+  .reserveModalInner{
+    width: 340px;
+    padding: 30px 15px 25px;
+  }
+  .reserveModalInner h2 {
+    padding-bottom: 30px;
+  }
+  .reserveCloseBtn {
+    right: 15px;
+  }
+  .reserveModalInner ul li {
+    margin-bottom: 16px;
+  }
+  .reserveModalInner ul li p {
+    font-size: 14px;
+  }
+  .reserveModalInner ul li input {
+    font-size: 17px;
+    padding: 9px 0;
+  }
+  .reserveModalInner ul li select {
+    font-size: 12px;
+  }
+}
+@media screen and (max-width: 350px) {
+  .reserveInfoWrapper{
+    width: 320px;
+    margin-left: calc(50% - 160px);
+  }
+  .reserveModalInner{
+    width: 320px;
+  }
+}
+@media screen and (max-width: 330px) {
+  .reserveInfoWrapper{
+    width: 300px;
+    margin-left: calc(50% - 150px);
+  }
+  .reserveModalInner{
+    width: 300px;
+  }
+}
