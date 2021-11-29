@@ -1,21 +1,13 @@
-.IntroContainer {
-  position: relative;
-}
 .IntroParents {
   margin-top: 69px;
   height: 100%;
-  position: relative;
-}
-
-.IntroContents {
-  padding-top: 61.5px;
 }
 
 .IntroIntro {
-  position: relative;
   background: rgb(62, 204, 181);
   height: 238px;
   color: white;
+  display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -31,8 +23,6 @@
 }
 
 .IntroImages {
-  position: relative;
-  height: 300px;
   width: 100%;
   margin: auto;
   display: grid;
