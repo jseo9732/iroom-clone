@@ -1,5 +1,8 @@
+.bgContainer {
+  height: fit-content;
+}
+
 .bgImage {
-  position: absolute;
   top: 0;
   left: 0;
   width: 100%;
@@ -87,12 +90,26 @@
 }
 
 @media screen and (max-width: 767px) {
+  .bgContainer {
+    height: fit-content;
+  }
+
+  .bgImage {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    position: absolute;
+  }
+
   .container {
+    height: 55%;
     width: 60%;
   }
 
   .container h1 {
-    font-size: 26px;
+    font-size: 25px;
   }
 
   .container h2 {
@@ -131,10 +148,6 @@
   }
 
   .btnToIntro {
-    margin-top: 20%;
-  }
-
-  .bgImage {
-    height: 100%;
+    margin-top: 10%;
   }
 }
