@@ -85,3 +85,56 @@
   color: white;
   line-height: 44px;
 }
+
+@media screen and (max-width: 767px) {
+  .container {
+    width: 60%;
+  }
+
+  .container h1 {
+    font-size: 26px;
+  }
+
+  .container h2 {
+    font-size: 15px;
+  }
+
+  .infoBox div {
+    width: 90%;
+    font-size: 13px;
+    height: auto;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+
+  .iconBox1 {
+    display: flex;
+    padding-top: 20%;
+  }
+
+  .iconBox1 i {
+    flex: 1;
+    font-size: 25px;
+    text-align: center;
+  }
+
+  .iconBox2 {
+    display: flex;
+    padding-top: 5%;
+  }
+
+  .iconBox2 span {
+    flex: 1;
+    font-size: 7.5px;
+    text-align: center;
+  }
+
+  .btnToIntro {
+    margin-top: 20%;
+  }
+
+  .bgImage {
+    height: 100%;
+  }
+}
