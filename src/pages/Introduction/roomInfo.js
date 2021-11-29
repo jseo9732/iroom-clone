@@ -9,6 +9,7 @@ export default function RoomInfos() {
   const a = useParams();
 
 <<<<<<< HEAD
+<<<<<<< HEAD
     console.log(a);
     
     let roomName = "";
@@ -16,6 +17,8 @@ export default function RoomInfos() {
     let roomInfo2 = "";
     let roomInfo3 = "";
 =======
+=======
+>>>>>>> 851ff9f587c8d9da91f45109b4c75e256f0c472d
   const [RoomInfo, setRoomInfos] = useState([""]);
   useEffect(() => {
     const getRoomInfo = async () => {
@@ -35,6 +38,9 @@ export default function RoomInfos() {
     getRoomInfo().then((data) => setRoomInfos(data));
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
+<<<<<<< HEAD
+>>>>>>> 851ff9f587c8d9da91f45109b4c75e256f0c472d
+=======
 >>>>>>> 851ff9f587c8d9da91f45109b4c75e256f0c472d
 
   let roomName = "";
@@ -70,6 +76,7 @@ export default function RoomInfos() {
           <br />
           <div>2️⃣ &nbsp;{roomInfo3}</div>
           <br />
+<<<<<<< HEAD
         </div>
         <div className="iconBox1">
           <i class="far fa-clock"></i>
@@ -87,6 +94,25 @@ export default function RoomInfos() {
         <div className="btnToIntro">
           <Link to="/intro">Go Back</Link>
         </div>
+=======
+        </div>
+        <div className="iconBox1">
+          <i class="far fa-clock"></i>
+          <i class="fas fa-desktop"></i>
+          <i class="fas fa-users"></i>
+          <i class="fas fa-wifi"></i>
+        </div>
+        <div className="iconBox2">
+          <span>24 hour access</span>
+          <span>Fully Equiped</span>
+          <span>Up to {a.roomNum} Number of People</span>
+          <span>Free WIFI</span>
+        </div>
+
+        <div className="btnToIntro">
+          <Link to="/intro">Go Back</Link>
+        </div>
+>>>>>>> 851ff9f587c8d9da91f45109b4c75e256f0c472d
       </div>
     </div>
   );
