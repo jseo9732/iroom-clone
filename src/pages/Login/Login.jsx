@@ -58,7 +58,7 @@ export default function Login() {
 
   return (
     <div className="LoginContainer">
-      <img src="/images/login_img.jpg" alt="" className="BackImg"/>
+      <img src="https://static.wixstatic.com/media/1e3643_6b202171835a44438a999f773fe0e77f~mv2_d_7360_5068_s_4_2.jpg/v1/fill/w_1494,h_566,al_c,q_85,usm_0.66_1.00_0.01/1e3643_6b202171835a44438a999f773fe0e77f~mv2_d_7360_5068_s_4_2.webp" alt="" className="BackImg"/>
       <div className="LoginFormContainer">
         <form onSubmit={onSubmit}>
           {newAccount ? 

@@ -94,7 +94,6 @@ export default function Profile({ userObj, isLoggedIn }) {
     }
     getReserveData().then(data => setReserveDataArray(data));}
   })
-  //예약 수정, 취소, 프로필 정보 변경구현 남음
   return (
     <div className="profile">
     {isLoggedIn ? (

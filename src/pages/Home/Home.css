@@ -1,5 +1,5 @@
 .HomeContainer {
-  margin-top: 72px;
+  margin-top: 69px;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -78,6 +78,9 @@
 
 .ContactContainer img {
   height: 100%;
+  filter: brightness(40%);
+  object-fit: cover;
+  object-position: 50% 50%;
 }
 
 .ContactBox {
