@@ -3,7 +3,7 @@
 }
 
 .IntroContents {
-  padding-top: 61.5px;
+  padding-top: 100px;
   height: 100%;
   height: 100%;
 }
@@ -32,6 +32,7 @@
   margin: auto;
   display: grid;
   grid-template-columns: 50% 50%;
+  grid-template-rows: 50% 50%;
 }
 
 .IntroImages img {
@@ -44,10 +45,6 @@
 .room10Box,
 .room20Box {
   position: relative;
-}
-
-.room10Box,
-.room20Box {
 }
 
 .room4Box :not(:hover),
@@ -104,11 +101,20 @@
     margin: auto;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 100%;
+    grid-template-rows: 25% 25% 25% 25%;
+  }
+
+  .IntroContents {
+    padding-top: 130px;
+  }
+
+  .IntroParagraph {
+    font-size: 13px;
+    margin-top: 30px;
   }
 
   .IntroParents {
-    margin-top: 80px;
+    margin-top: 70px;
   }
 
   .room4Box,
@@ -120,7 +126,7 @@
   }
 
   .IntroTitle {
-    font-size: 40px;
+    font-size: 30px;
   }
 
   .overlay {

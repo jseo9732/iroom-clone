@@ -9,8 +9,8 @@ export default function Introduction() {
     <div className="IntroIntro">
         <div className="IntroContents">
             <span className="IntroTitle">스터디룸 소개</span><br/><br/><br/>    
-            <span>취업 준비, 강의 등 모임 맞춤형 스터디룸</span><br/><br/>
-            <span>1인당 1,000원에 이용 가능, 4인 ~ 20인의 스터디 공간</span>
+            <span className="IntroParagraph">취업 준비, 강의 등 모임 맞춤형 스터디룸</span><br/><br/>
+            <span className="IntroParagraph">1인당 1,000원에 이용 가능, 4인 ~ 20인의 스터디 공간</span>
         </div>
     </div>
     <div className="IntroImages">

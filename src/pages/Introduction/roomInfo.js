@@ -78,24 +78,9 @@ export default function RoomInfos() {
         <div className="btnToIntro">
           <Link to="/intro">Go Back</Link>
         </div>
-
-        </div>
-        <div className="iconBox1">
-          <i class="far fa-clock"></i>
-          <i class="fas fa-desktop"></i>
-          <i class="fas fa-users"></i>
-          <i class="fas fa-wifi"></i>
-        </div>
-        <div className="iconBox2">
-          <span>24 hour access</span>
-          <span>Fully Equiped</span>
-          <span>Up to {a.roomNum} Number of People</span>
-          <span>Free WIFI</span>
-        </div>
-
-        <div className="btnToIntro">
-          <Link to="/intro">Go Back</Link>
         </div>
       </div>
+
+      
   );
 }
