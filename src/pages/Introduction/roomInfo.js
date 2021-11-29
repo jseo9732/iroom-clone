@@ -25,33 +25,12 @@ export default function RoomInfos() {
         getRoomInfo().then(data => setRoomInfos(data));
     }, [])
 
-<<<<<<< HEAD
     console.log(a);
     
     let roomName = "";
     let roomInfo1 = "";
     let roomInfo2 = "";
     let roomInfo3 = "";
-=======
-  const [RoomInfo, setRoomInfos] = useState([""]);
-  useEffect(() => {
-    const getRoomInfo = async () => {
-      const q = query(
-        collection(dbService, "roomInfo"),
-        where("max", "==", parseInt(a.roomNum))
-      );
-      const querySnapshot = await getDocs(q);
-      let RoomInfo = [];
-      querySnapshot.forEach((doc) => {
-        RoomInfo.push(doc.data());
-      });
-      return {
-        RoomInfo,
-      };
-    };
-    getRoomInfo().then((data) => setRoomInfos(data));
-  }, []);
->>>>>>> ac3e30f7cc0ce4a08050788573ab72b7754cec99
 
     if(RoomInfo.RoomInfo !== undefined)
         {
@@ -84,55 +63,11 @@ export default function RoomInfos() {
                 <span>Free WIFI</span>
             </div>
 
-<<<<<<< HEAD
             <div className="btnToIntro">
             <Link to="/intro">Go Back</Link>
             </div>
-=======
-  return (
-    <div className="bgContainer">
-      <img
-        className="bgImage"
-        src={require(`../Introduction/images/${a.roomNum}.jpg`).default}
-        alt=""
-      />
-      <div className="container">
-        <div className="infoBox">
-          <h1>{roomName}</h1>
-          <br />
-          <h2>{roomInfo1}</h2>
-          <br />
-          <br />
-          <br />
-          <div>1️⃣ &nbsp;{roomInfo2}</div>
-          <br />
-          <br />
-          <br />
-          <div>2️⃣ &nbsp;{roomInfo3}</div>
-          <br />
-
-        </div>
-        <div className="iconBox1">
-          <i class="far fa-clock"></i>
-          <i class="fas fa-desktop"></i>
-          <i class="fas fa-users"></i>
-          <i class="fas fa-wifi"></i>
->>>>>>> ac3e30f7cc0ce4a08050788573ab72b7754cec99
         </div>
         </div>
-<<<<<<< HEAD
     );
     }
     
-=======
-
-        <div className="btnToIntro">
-          <Link to="/intro">Go Back</Link>
-        </div>
-        </div>
-      </div>
-
-      
-  );
-}
->>>>>>> ac3e30f7cc0ce4a08050788573ab72b7754cec99
