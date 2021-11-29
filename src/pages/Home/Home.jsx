@@ -81,7 +81,7 @@ export default function Home() {
   return (
     <>
       <div className="HomeContainer">
-        <img src="/images/homePic.webp" alt=""/>
+        <img src="https://static.wixstatic.com/media/1e3643_f1fadcd033fd4146bf3064e9c4e9e074~mv2_d_5184_3456_s_4_2.jpg/v1/fill/w_1868,h_1310,al_c,q_90,usm_0.66_1.00_0.01/1e3643_f1fadcd033fd4146bf3064e9c4e9e074~mv2_d_5184_3456_s_4_2.webp" alt=""/>
         <div className={isHomeContntsScrolled ? 'HomeContnts HomeContntsScrolled' : 'HomeContnts'}>
           <div className="HomeTitle">IROOM STUDY</div>
           <div className="HomeDesc">2인 ~ 15인 무인 스터디룸</div>
@@ -91,7 +91,7 @@ export default function Home() {
         </div>
       </div>
       <div className="ContactContainer">
-        <img src="/images/contant_img.jpg" alt=""/>
+        <img src="https://static.wixstatic.com/media/1e3643_6b202171835a44438a999f773fe0e77f~mv2_d_7360_5068_s_4_2.jpg/v1/fill/w_1494,h_566,al_c,q_85,usm_0.66_1.00_0.01/1e3643_6b202171835a44438a999f773fe0e77f~mv2_d_7360_5068_s_4_2.webp" alt=""/>
         <div className="ContactBox">
           <div className={isContactScrolled ? "ContactInfo ContactScrolled" : "ContactInfo"}>
             <div className="ContactTitle">CONTACT US</div>
