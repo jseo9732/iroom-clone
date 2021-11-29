@@ -30,7 +30,6 @@
 .IntroImages {
   display: grid;
   grid-template-columns: 50% 50%;
-  grid-template-rows: 30% 30%;
 }
 
 .IntroImages img {
