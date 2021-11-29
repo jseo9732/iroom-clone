@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/iroom-clone/static/css/main.3a546445.chunk.css",
+    "main.js": "/iroom-clone/static/js/main.12b37a5b.chunk.js",
+    "main.js.map": "/iroom-clone/static/js/main.12b37a5b.chunk.js.map",
+    "runtime-main.js": "/iroom-clone/static/js/runtime-main.2fc27f27.js",
+    "runtime-main.js.map": "/iroom-clone/static/js/runtime-main.2fc27f27.js.map",
+    "static/js/2.3e8314a3.chunk.js": "/iroom-clone/static/js/2.3e8314a3.chunk.js",
+    "static/js/2.3e8314a3.chunk.js.map": "/iroom-clone/static/js/2.3e8314a3.chunk.js.map",
+    "index.html": "/iroom-clone/index.html",
+    "static/css/main.3a546445.chunk.css.map": "/iroom-clone/static/css/main.3a546445.chunk.css.map",
+    "static/js/2.3e8314a3.chunk.js.LICENSE.txt": "/iroom-clone/static/js/2.3e8314a3.chunk.js.LICENSE.txt",
+    "static/media/10.jpg": "/iroom-clone/static/media/10.e5c65b67.jpg",
+    "static/media/10인.jpg": "/iroom-clone/static/media/10인.381f8d70.jpg",
+    "static/media/20.jpg": "/iroom-clone/static/media/20.86c076af.jpg",
+    "static/media/20인.webp": "/iroom-clone/static/media/20인.c69b6679.webp",
+    "static/media/4.jpg": "/iroom-clone/static/media/4.36fa677c.jpg",
+    "static/media/4인.jpg": "/iroom-clone/static/media/4인.6a77fa50.jpg",
+    "static/media/6.jpg": "/iroom-clone/static/media/6.169d3f09.jpg",
+    "static/media/6인.png": "/iroom-clone/static/media/6인.0c45629e.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.2fc27f27.js",
+    "static/js/2.3e8314a3.chunk.js",
+    "static/css/main.3a546445.chunk.css",
+    "static/js/main.12b37a5b.chunk.js"
+  ]
+}
