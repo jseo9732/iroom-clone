@@ -1,18 +1,13 @@
-.IntroContainer {
-  position: relative;
-}
 .IntroParents {
   margin-top: 69px;
-}
-
-.IntroContents {
-  padding-top: 61.5px;
+  height: 100%;
 }
 
 .IntroIntro {
   background: rgb(62, 204, 181);
   height: 238px;
   color: white;
+  display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
@@ -28,8 +23,11 @@
 }
 
 .IntroImages {
+  width: 100%;
+  margin: auto;
   display: grid;
   grid-template-columns: 50% 50%;
+  grid-template-rows: 30% 30%;
 }
 
 .IntroImages img {
@@ -41,6 +39,7 @@
 .room6Box,
 .room10Box,
 .room20Box {
+  height: 400px;
   position: relative;
 }
 
@@ -94,11 +93,11 @@
 
 @media screen and (max-width: 767px) {
   .IntroImages {
-    width: 100%;
+    height: 100%;
     margin: auto;
     display: grid;
     grid-template-columns: 100%;
-    grid-template-rows: 100%;
+    grid-template-rows: 25% 25% 25% 25%;
   }
 
   .IntroParents {
