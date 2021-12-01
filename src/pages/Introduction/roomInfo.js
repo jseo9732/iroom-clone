@@ -7,11 +7,11 @@ import { collection, query, where, getDocs } from "firebase/firestore";
 
 
 export default function RoomInfos() {
-    const [roomInfoBox, setroomInfoBox] = useState(false);
+    const [timer, setTimer] = useState(false);
     useEffect(() => {
         setTimeout(() =>{
-            setroomInfoBox(true);
-        }, 0);
+            setTimer(true);
+        }, 1000);
     }, [])
 
     const a = useParams();
@@ -48,9 +48,9 @@ export default function RoomInfos() {
         }
 
     return(
-        <div className="bgContainer">
+        <div className={timer ? "bgContainer mountedBgContainer" : "bgContainer"}>
             <img className="bgImage" src={require(`../Introduction/images/${a.roomNum}.jpg`).default} alt=""/>
-        <div className={roomInfoBox ? "container mountedContainer" : "container"}>
+        <div className={timer? "container mountedContainer" : "container"}>
             <div className="infoBox">
                 <h1>{roomName}</h1><br/>
                 <h2>{roomInfo1}</h2><br/><br/><br/>
