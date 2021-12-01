@@ -11,6 +11,7 @@
 }
 
 .container {
+  opacity: 0;
   margin-top: 3%;
   width: 43%;
   height: 70%;
@@ -21,6 +22,11 @@
   background-color: white;
   font-family: "Noto Sans KR", sans-serif;
   box-shadow: var(--shd, 0 1px 4px rgba(0, 0, 0, 0.6));
+  transition: 1s;
+}
+
+.mountedContainer {
+  opacity: 1;
 }
 
 .container h1 {
