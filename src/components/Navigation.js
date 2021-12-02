@@ -1,8 +1,8 @@
-import React, { useEffect, useState } from "react";
-import { Link, NavLink, useNavigate } from "react-router-dom";
-import { authService } from "../firebase";
-import { signOut } from "firebase/auth";
-import "./Navigation.css";
+import React, { useEffect, useState } from 'react';
+import { Link, NavLink, useNavigate } from 'react-router-dom';
+import { authService } from '../firebase';
+import { signOut } from 'firebase/auth';
+import './Navigation.css';
 
 export default function Navigation({ isLoggedIn }) {
   const auth = authService;
@@ -20,7 +20,7 @@ export default function Navigation({ isLoggedIn }) {
 
   const onLogOutClick = () => {
     signOut(auth);
-    navigate("/");
+    navigate('/');
     setIsMenuShow(false);
   };
 
@@ -30,11 +30,11 @@ export default function Navigation({ isLoggedIn }) {
 
   return (
     <div className="HeaderContainer">
-      <div className={isScrolled ? "HeaderBox scrolled" : "HeaderBox"}>
+      <div className={isScrolled ? 'HeaderBox scrolled' : 'HeaderBox'}>
         <Link to="/" className="HeaderTitle" onClick={onBtnClick}>
           모임공간 이룸
         </Link>
-        <div className={isMenuShow ? "HeaderMenu active" : "HeaderMenu"}>
+        <div className={isMenuShow ? 'HeaderMenu active' : 'HeaderMenu'}>
           <NavLink to="/" className="NavBtn" onClick={onBtnClick}>
             홈
           </NavLink>
