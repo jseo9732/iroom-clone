@@ -75,15 +75,19 @@
   text-align: center;
 }
 
+.btnContainer {
+  width: 100%;
+}
+
 .btnToIntro {
   border: none;
   margin-top: 5%;
-  width: 30%;
+  width: 200px;
   height: 44px;
   text-align: center;
   background-color: #3eccb4;
   transition: 500ms;
-  margin-left: calc((100% - 191px) / 2);
+  margin-left: calc((100% - 200px) / 2);
   text-decoration: none;
 }
 
@@ -160,6 +164,8 @@
 
   .btnToIntro {
     margin-top: 10%;
+    width: 150px;
+    margin-left: calc((100% - 150px) / 2);
   }
 }
 

@@ -72,9 +72,7 @@ export default function RoomInfos() {
 
             <div className="btnContainer">
                 <button className="btnToIntro">
-                <Link to="/intro">
-                    <div className="btn">Go Back</div>
-                </Link>
+                    <Link to="/intro">Go Back</Link>
                 </button> 
             </div>
             </div>
