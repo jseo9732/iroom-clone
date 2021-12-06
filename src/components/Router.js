@@ -1,6 +1,5 @@
 import React from "react";
 import { BrowserRouter, Routes, Route} from "react-router-dom";
-import { createBrowserHistory } from "history";
 import { RoomInfos, Home, Intro, Reservation, Login, Profile, ScrollTop} from "../pages/PagesIndex";
 import Navigation from "./Navigation";
 import Footer from "./Footer";

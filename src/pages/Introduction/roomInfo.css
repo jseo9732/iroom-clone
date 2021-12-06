@@ -98,6 +98,8 @@
   line-height: 44px;
 }
 
+/* responsive design */
+
 @media screen and (max-width: 767px) {
   .bgContainer {
     height: fit-content;
@@ -107,13 +109,12 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-size: cover;
-    position: absolute;
   }
 
   .container {
-    height: 55%;
+    height: 60%;
     width: 60%;
   }
 
@@ -136,7 +137,7 @@
 
   .iconBox1 {
     display: flex;
-    padding-top: 20%;
+    padding-top: 15%;
   }
 
   .iconBox1 i {
@@ -158,5 +159,34 @@
 
   .btnToIntro {
     margin-top: 10%;
+  }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1000px) {
+  .container {
+    height: 7 0%;
+    width: 60%;
+  }
+
+  .bgContainer {
+    height: fit-content;
+  }
+
+  .bgImage {
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+  }
+
+  .iconBox1 {
+    display: flex;
+    padding-top: 15%;
+  }
+
+  .iconBox2 {
+    display: flex;
+    padding-top: 5%;
   }
 }
