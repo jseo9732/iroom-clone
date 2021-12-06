@@ -70,11 +70,15 @@ export default function RoomInfos() {
                 <span>Free WIFI</span>
             </div>
 
-            <div className="btnToIntro">
-            <Link to="/intro">Go Back</Link>
+            <div className="btnContainer">
+                <button className="btnToIntro">
+                <Link to="/intro">
+                    <div className="btn">Go Back</div>
+                </Link>
+                </button> 
             </div>
-        </div>
-        </div>
+            </div>
+            </div>
     );
     }
     

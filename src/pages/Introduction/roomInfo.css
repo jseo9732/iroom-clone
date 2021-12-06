@@ -76,8 +76,9 @@
 }
 
 .btnToIntro {
+  border: none;
   margin-top: 5%;
-  width: 191px;
+  width: 30%;
   height: 44px;
   text-align: center;
   background-color: #3eccb4;
