@@ -30,7 +30,7 @@ export default function RoomInfos() {
         }
       }
         getRoomInfo().then(data => setRoomInfos(data));
-    }, [])
+    }, [a.roomNum])
 
     console.log(timer);
     
