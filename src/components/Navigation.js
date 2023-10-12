@@ -32,7 +32,7 @@ export default function Navigation({ isLoggedIn }) {
     <div className="HeaderContainer">
       <div className={isScrolled ? "HeaderBox scrolled" : "HeaderBox"}>
         <Link to="/" className="HeaderTitle" onClick={onBtnClick}>
-          모임공간 이룸
+          모임공간 이룸 임시추가
         </Link>
         <div className={isMenuShow ? "HeaderMenu active" : "HeaderMenu"}>
           <NavLink to="/" className="NavBtn" onClick={onBtnClick}>
